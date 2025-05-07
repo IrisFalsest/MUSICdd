@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "提交订单",
+  "usingComponents": {
+    "u-icon": "/uview-ui/components/u-icon/u-icon",
+    "u-gap": "/uview-ui/components/u-gap/u-gap",
+    "u-number-box": "/uview-ui/components/u-number-box/u-number-box",
+    "u-field": "/uview-ui/components/u-field/u-field",
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "u-top-tips": "/uview-ui/components/u-top-tips/u-top-tips",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup"
+  }
+}

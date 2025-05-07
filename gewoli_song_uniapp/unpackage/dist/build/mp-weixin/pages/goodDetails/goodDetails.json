@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "white-heads": "/components/whiteHeads/whiteHeads"
+  }
+}

@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.data-v-158d57cc .u-tabbar__content .u-tabbar__content__circle .u-icon__img {
+  width: 82rpx !important;
+  height: 82rpx !important;
+}
+.data-v-158d57cc .u-tabbar__content .u-icon__img {
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.data-v-158d57cc .u-tabbar__content__circle__border {
+  top: 0 !important;
+}
+.data-v-158d57cc .u-tabbar__content__circle__button {
+  top: 4px !important;
+}
+.content.data-v-158d57cc {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: url("https://image-file2024.oss-cn-beijing.aliyuncs.com/geWoLiMusicMall/backgroundImage/image5.jpg");
+  background-size: 100% 100%;
+}
+.content .title.data-v-158d57cc {
+  line-height: 70rpx;
+  font-size: 36rpx;
+  margin-left: 36rpx;
+  position: relative;
+}
+.content .pTit.data-v-158d57cc {
+  margin-top: 105rpx;
+  text-indent: 64rpx;
+  font-size: 40rpx;
+  color: #231815;
+  font-weight: 800;
+}
+.content .pTxt.data-v-158d57cc {
+  margin-top: 30rpx;
+  text-indent: 64rpx;
+  font-size: 40rpx;
+  color: #231815;
+  font-weight: 800;
+}
+.content .icon.data-v-158d57cc {
+  width: 378rpx;
+  height: 322rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 50rpx;
+}
+.content .sings.data-v-158d57cc {
+  margin-top: 32rpx;
+  border-radius: 20rpx;
+  border: 4rpx solid #ffffff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.67) 0%, rgba(255, 255, 255, 0.56) 100%);
+  box-shadow: 0 0 20rpx #fff;
+}
+.content .sings .jian.data-v-158d57cc {
+  padding: 60rpx 64rpx;
+  border-radius: 20rpx;
+  box-shadow: inset 0 0 20rpx #edc8a5;
+}
+.content .sings .jian .formView.data-v-158d57cc {
+  margin-bottom: 42rpx;
+  display: flex;
+}
+.content .sings .jian .formView .fvTop.data-v-158d57cc {
+  width: 200rpx;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #231815;
+}
+.content .sings .jian .formView .fvTop image.data-v-158d57cc {
+  margin-right: 16rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+.content .sings .jian .formView .fvBot.data-v-158d57cc {
+  width: 100%;
+  padding: 10rpx 0;
+}
+.content .sings .jian .formView .fvBot input.data-v-158d57cc {
+  font-size: 24rpx;
+  width: 100%;
+  border-bottom: 2rpx solid #999;
+}
+.content .sings .jian .formView .fvBot view.data-v-158d57cc {
+  overflow: auto;
+  max-height: 500rpx;
+  border: 2rpx solid #eee;
+  border-radius: 20rpx;
+  padding: 32rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.content .sings .jian .formView.data-v-158d57cc:last-child {
+  margin-bottom: 0;
+}
+.content .sings .jian .formSubmit.data-v-158d57cc {
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 800;
+  color: #ffffff;
+  border: 4rpx solid #fea14a;
+  border-radius: 58rpx;
+  background: linear-gradient(92deg, #ffd0a4 0%, #fab06c 33%, #fab06c 73%, #ffc996 100%);
+}
+.content .clause.data-v-158d57cc {
+  margin: 80rpx auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .clause .txt1.data-v-158d57cc {
+  font-size: 24rpx;
+}
+.content .clause text.data-v-158d57cc {
+  font-size: 24rpx;
+}
+.content .clause .txt2.data-v-158d57cc {
+  color: #e9c19c;
+}
+

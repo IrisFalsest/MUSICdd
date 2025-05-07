@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "leaderboardDetails-u-waterfall-left": "/pages/leaderboardDetails/leaderboardDetails-u-waterfall-left",
+    "leaderboardDetails-u-waterfall-right": "/pages/leaderboardDetails/leaderboardDetails-u-waterfall-right",
+    "heads": "/components/heads/heads",
+    "u-input": "/uview-ui/components/u-input/u-input",
+    "u-waterfall": "/uview-ui/components/u-waterfall/u-waterfall",
+    "u-lazy-load": "/uview-ui/components/u-lazy-load/u-lazy-load",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore"
+  }
+}

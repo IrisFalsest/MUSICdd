@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysUserStudioCollectionMapper">
+
+    <select id="acquisitionUserStudioCollectionListByUserId"
+            resultType="com.ruoyi.system.entity.SysRecordingStudio">
+        SELECT
+            s.*
+        FROM
+            sys_recording_studio s,
+            sys_user_studio_collection c,
+            sys_mobile_end_user u
+        WHERE
+            c.studio_id = s.id
+          AND c.user_id = u.id
+          AND c.user_id = #{userId}
+    </select>
+
+</mapper>

@@ -1,0 +1,35 @@
+
+.mycanvas.data-v-629d7fbc {
+	margin: 0 auto;
+	border-radius: 10rpx;
+	overflow: hidden;
+}
+.saveImg.data-v-629d7fbc {
+	width: 70%;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	color: #fff;
+	background-color: #4db8e4;
+	border-radius: 10rpx;
+	margin: 40rpx auto 20rpx;
+}
+.imgs.data-v-629d7fbc {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	border-radius: 10rpx;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	/* 遮挡二维码 */
+	background-color: white;
+	/* 置于上层 */
+	z-index: 99;
+}
+.tips.data-v-629d7fbc {
+	text-align: center;
+	color: #fff;
+	font-size: 24rpx;
+	margin-top: 20rpx;
+}
+

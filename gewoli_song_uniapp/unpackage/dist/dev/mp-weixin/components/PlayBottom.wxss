@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.data-v-9be532cc .u-tabbar__content .u-tabbar__content__circle .u-icon__img {
+  width: 82rpx !important;
+  height: 82rpx !important;
+}
+.data-v-9be532cc .u-tabbar__content .u-icon__img {
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.data-v-9be532cc .u-tabbar__content__circle__border {
+  top: 0 !important;
+}
+.data-v-9be532cc .u-tabbar__content__circle__button {
+  top: 4px !important;
+}
+.play-bottom.data-v-9be532cc {
+  width: 100%;
+  position: fixed;
+  bottom: 10%;
+}
+.play-bottom .play-bottom-box.data-v-9be532cc {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 5%;
+  border-radius: 20rpx;
+  justify-content: space-between;
+  padding-left: 20rpx;
+}
+.play-bottom .play-bottom-box .play-bottom-box-content-left.data-v-9be532cc {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+.play-bottom .play-bottom-box .play-bottom-box-content-left .play-bottom-box-title.data-v-9be532cc {
+  margin-left: 10rpx;
+}
+.play-bottom .play-bottom-box .play-bottom-box-image.data-v-9be532cc {
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+}
+.play-bottom .play-bottom-box .play-bottom-box-image image.data-v-9be532cc {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.play-bottom .play-bottom-box .play-bottom-box-image-play.data-v-9be532cc {
+  width: 70rpx;
+  height: 70rpx;
+}
+.play-bottom .play-bottom-box .play-bottom-box-image-play image.data-v-9be532cc {
+  width: 100%;
+  height: 100%;
+}
+.play-bottom .play-bottom-box .play-bottom-box-image-play.data-v-9be532cc {
+  margin-right: 20rpx;
+}
+.play-bottom .rotate-image.data-v-9be532cc {
+  -webkit-animation: spin-data-v-9be532cc 2s linear infinite;
+          animation: spin-data-v-9be532cc 2s linear infinite;
+}
+@-webkit-keyframes spin-data-v-9be532cc {
+from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes spin-data-v-9be532cc {
+from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+

@@ -1,0 +1,238 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "排行榜详情",
+          "pathName": "pages/leaderboardDetails/leaderboardDetails",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "歌曲购买",
+          "pathName": "pages/songBuying/songBuying",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "详情",
+          "pathName": "pages/details/details",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "提交订单",
+          "pathName": "pages/order/submit",
+          "query": "obj=%7B%22id%22%3A3%2C%22goodsTypeId%22%3A1%2C%22goodsName%22%3A%22%E7%9F%A5%E6%9B%B4%E9%B8%9FCD%22%2C%22goodsImageUrl%22%3A%22https%3A%2F%2Fgewoli.oss.junxing.store%2FgeWoLiMusicMall%2Fsong%2Fa8b35dbca30891afd68fcab96f0bddc4.jpeg%22%2C%22goodsChart%22%3A%5B%22https%3A%2F%2Fgewoli.oss.junxing.store%2FgeWoLiMusicMall%2FsongCoverPhoto%2Faca901ef-8948-4bf7-8cdd-b46af5614583.jpg%22%2C%22https%3A%2F%2Fgewoli.oss.junxing.store%2FgeWoLiMusicMall%2FsongCoverPhoto%2F4f17dac6-6346-4a5c-93b6-2154400c74aa.jpeg%22%5D%2C%22goodsInfo%22%3A%22%E5%AE%87%E5%AE%99%E7%BA%A7%E5%A4%A7%E6%98%8E%E6%98%9F%E7%9F%A5%E6%9B%B4%E9%B8%9F%E6%9C%80%E6%96%B0%E4%B8%93%E8%BE%91%22%2C%22goodsDetail%22%3A%5B%22https%3A%2F%2Fgewoli.oss.junxing.store%2FgeWoLiMusicMall%2FsongCoverPhoto%2F73ab48ba-5f6b-4699-8806-4fe4dbd14aa2.png%22%2C%22https%3A%2F%2Fgewoli.oss.junxing.store%2FgeWoLiMusicMall%2FsongCoverPhoto%2Fe5eb1101-f029-486b-b240-8b1d2e64b880.jpeg%22%2C%22https%3A%2F%2Fgewoli.oss.junxing.store%2FgeWoLiMusicMall%2FsongCoverPhoto%2Fdfc95d6e-63ca-4393-95f4-e36e569fff14.png%22%5D%2C%22goodsOriginalPrice%22%3A9999%2C%22goodsCurrentPrice%22%3A8888%2C%22goodsHeat%22%3A999%2C%22isScoreBuy%22%3A0%2C%22scoreSum%22%3A0%2C%22createBy%22%3Anull%2C%22createTime%22%3A%222024-06-25T08%3A26%3A53.000%2B08%3A00%22%2C%22modifyBy%22%3Anull%2C%22modifyTime%22%3Anull%2C%22status%22%3A0%2C%22reviewStatus%22%3A2%7D",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "音乐人",
+          "pathName": "pages/Musician/Musician",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "报名",
+          "pathName": "/pages/ranking/ranking",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/canvas/canvas",
+          "pathName": "pages/canvas/canvas",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/tabbar/recording/details",
+          "pathName": "pages/tabbar/recording/details",
+          "query": "id=2",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "签约",
+          "pathName": "pages/upUserInfo/upExamine",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "mv播放",
+          "pathName": "pages/mv-play/mv-play",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "修改用户信息",
+          "pathName": "pages/upUserInfo/centerUpuserInfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "提交订单",
+          "pathName": "pages/order/submit",
+          "query": "obj={\"id\":1,\"goodsTypeId\":1,\"goodsName\":\"满船清梦压星河\",\"goodsImageUrl\":\"https://gewoli.oss.junxing.store/geWoLiMusicMall/songCoverPhoto/2fe511b8-67d6-4fb6-807a-babb4305faf2.png\",\"goodsChart\":\"https://gewoli.oss.junxing.store/geWoLiMusicMall/songCoverPhoto/89ab2170-a580-4b15-be4f-668998837b91.png,https://gewoli.oss.junxing.store/geWoLiMusicMall/songCoverPhoto/6d97439b-3d97-40bc-9e79-a1d17fd40a9b.png,https://gewoli.oss.junxing.store/geWoLiMusicMall/songCoverPhoto/79d6f68f-42f7-43f1-9552-2cc42e45a472.png\",\"goodsInfo\":\"测试商品描述\",\"goodsDetail\":\"https://gewoli.oss.junxing.store/geWoLiMusicMall/songCoverPhoto/13818987-424e-4ff3-81d8-069d9b23b12d.png,https://gewoli.oss.junxing.store/geWoLiMusicMall/songCoverPhoto/e9a0bd07-c345-466a-911b-5cd8acb0787c.png,https://gewoli.oss.junxing.store/geWoLiMusicMall/songCoverPhoto/109414b0-c296-4c12-b0da-a09f8fd77458.png\",\"goodsOriginalPrice\":10,\"goodsCurrentPrice\":1,\"goodsHeat\":1,\"createBy\":null,\"createTime\":\"2024-06-09T10:18:44.000+08:00\",\"modifyBy\":null,\"modifyTime\":null,\"status\":0,\"reviewStatus\":1}",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "已购买歌曲",
+          "pathName": "pages/order/singOrderList",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "订单详情",
+          "pathName": "pages/order/orderDetails",
+          "query": "oItem={\"id\":\"No21213293912717038553759988618298\",\"number\":null,\"logisticsNo\":null,\"status\":4,\"userId\":1,\"goodsId\":1,\"goodsName\":\"CD\",\"goodsImageUrl\":\"https://gewoli.oss.junxing.store/geWoLiMusicMall/songCoverPhoto/f5db48f9-ec92-4010-8437-2e3edf5a4440.png\",\"goodsSpecificationsId\":null,\"buyQuantity\":1,\"orderTime\":null,\"checkoutTime\":null,\"payMethod\":1,\"payStatus\":0,\"amount\":2500,\"remark\":null,\"username\":null,\"phone\":null,\"address\":\"湖南省,岳阳市,岳阳楼区\",\"consignee\":\"彭江海\",\"cancelReason\":null,\"rejectionReason\":null,\"cancelTime\":null,\"createBy\":null,\"createTime\":\"2024-06-01T07:28:29\",\"modifyBy\":null,\"modifyTime\":null}",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "订单列表",
+          "pathName": "pages/order/list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "商品详情",
+          "pathName": "pages/goodDetails/goodDetails",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "意见反馈",
+          "pathName": "pages/records/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "收藏列表",
+          "pathName": "pages/collection/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "商城",
+          "pathName": "pages/tabbar/goods/goods",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "在售歌单",
+          "pathName": "pages/tabbar/shopSing/shopSing",
+          "query": "item=%7B%22id%22%3A18%2C%22songTitle%22%3A%22%E5%9B%BD%E9%A3%8E%22%2C%22songName%22%3A%22%E6%B5%8B%E8%AF%95%E6%AD%8C%E6%9B%B2%E5%90%8D%22%2C%22album%22%3Anull%2C%22songTypeId%22%3A2%2C%22duration%22%3Anull%2C%22songFileUrl%22%3A%22https%3A%2F%2Fgewoli.oss.junxing.store%2FgeWoLiMusicMall%2Fsong%2F48dc5d39-e8e3-4287-85dd-f2c4697b4d9c.mp3%22%2C%22songCoverPhotoUrl%22%3A%22https%3A%2F%2Fgewoli.oss.junxing.store%2F%5Cr%5CngeWoLiMusicMall%2FsongCoverPhoto%2F38ebc776-d294-4c3b-9cd6-713655f3acd4.png%22%2C%22songLyrics%22%3A%22%5Bti%3A%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF%20(%E3%80%8A%E5%90%8E%E4%BC%9A%E6%97%A0%E6%9C%9F%E3%80%8B%E7%94%B5%E5%BD%B1%E4%B8%BB%E9%A2%98%E6%9B%B2)%5D%5Cn%5Bar%3A%E6%9C%B4%E6%A0%91%5D%5Cn%5Bal%3A%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF%5D%5Cn%5Bby%3A%5D%5Cn%5Boffset%3A0%5D%5Cn%5B00%3A00.00%5D%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF%20-%20%E6%9C%B4%E6%A0%91%5Cn%5B00%3A04.00%5D%E8%AF%8D%EF%BC%9A%E9%9F%A9%E5%AF%92%2F%E6%9C%B4%E6%A0%91%5Cn%5B00%3A08.00%5D%E6%9B%B2%EF%BC%9A%E6%9C%B4%E6%A0%91%5Cn%5B00%3A12.00%5D%E5%BE%98%E5%BE%8A%E7%9D%80%E7%9A%84%5Cn%5B00%3A13.40%5D%E5%9C%A8%E8%B7%AF%E4%B8%8A%E7%9A%84%5Cn%5B00%3A14.73%5D%5Cn%5B00%3A17.69%5D%E4%BD%A0%E8%A6%81%E8%B5%B0%E5%90%97%5Cn%5B00%3A19.08%5DVia%20via%5Cn%5B00%3A20.80%5D%5Cn%5B00%3A23.40%5D%E6%98%93%E7%A2%8E%E7%9A%84%5Cn%5B00%3A24.80%5D%E9%AA%84%E5%82%B2%E7%9D%80%5Cn%5B00%3A26.09%5D%5Cn%5B00%3A29.12%5D%E9%82%A3%E4%B9%9F%E6%9B%BE%E6%98%AF%E6%88%91%E7%9A%84%E6%A8%A1%E6%A0%B7%5Cn%5B00%3A31.90%5D%5Cn%5B00%3A34.78%5D%E6%B2%B8%E8%85%BE%E7%9D%80%E7%9A%84%5Cn%5B00%3A36.21%5D%E4%B8%8D%E5%AE%89%E7%9D%80%E7%9A%84%5Cn%5B00%3A37.56%5D%5Cn%5B00%3A40.50%5D%E4%BD%A0%E8%A6%81%E5%8E%BB%E5%93%AA%5Cn%5B00%3A41.88%5DVia%20via%5Cn%5B00%3A43.73%5D%5Cn%5B00%3A46.22%5D%E8%B0%9C%E4%B8%80%E6%A0%B7%E7%9A%84%5Cn%5B00%3A47.58%5D%E6%B2%89%E9%BB%98%E7%9D%80%E7%9A%84%5Cn%5B00%3A48.78%5D%5Cn%5B00%3A51.93%5D%E6%95%85%E4%BA%8B%E4%BD%A0%E7%9C%9F%E7%9A%84%5Cn%5B00%3A53.62%5D%E5%9C%A8%E5%90%AC%E5%90%97%5Cn%5B00%3A54.80%5D%5Cn%5B00%3A56.34%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E8%B7%A8%E8%BF%87%E5%B1%B1%E5%92%8C%E5%A4%A7%E6%B5%B7%5Cn%5B00%3A59.43%5D%E4%B9%9F%E7%A9%BF%E8%BF%87%E4%BA%BA%E5%B1%B1%E4%BA%BA%E6%B5%B7%5Cn%5B01%3A01.88%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E6%8B%A5%E6%9C%89%E7%9D%80%E7%9A%84%E4%B8%80%E5%88%87%5Cn%5B01%3A05.14%5D%E8%BD%AC%E7%9C%BC%E9%83%BD%E9%A3%98%E6%95%A3%E5%A6%82%E7%83%9F%5Cn%5B01%3A07.88%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E5%A4%B1%E8%90%BD%E5%A4%B1%E6%9C%9B%5Cn%5B01%3A10.13%5D%E5%A4%B1%E6%8E%89%E6%89%80%E6%9C%89%E6%96%B9%E5%90%91%5Cn%5B01%3A13.17%5D%5Cn%5B01%3A13.72%5D%E7%9B%B4%E5%88%B0%E7%9C%8B%E8%A7%81%E5%B9%B3%E5%87%A1%5Cn%5B01%3A16.39%5D%E6%89%8D%E6%98%AF%E5%94%AF%E4%B8%80%E7%9A%84%E7%AD%94%E6%A1%88%5Cn%5B01%3A18.99%5D%5Cn%5B01%3A31.95%5D%E5%BD%93%E4%BD%A0%E4%BB%8D%E7%84%B6%5Cn%5B01%3A33.32%5D%E8%BF%98%E5%9C%A8%E5%B9%BB%E6%83%B3%5Cn%5B01%3A34.76%5D%5Cn%5B01%3A37.69%5D%E4%BD%A0%E7%9A%84%E6%98%8E%E5%A4%A9%5Cn%5B01%3A39.10%5DVia%20via%5Cn%5B01%3A40.95%5D%5Cn%5B01%3A43.35%5D%E5%A5%B9%E4%BC%9A%E5%A5%BD%E5%90%97%5Cn%5B01%3A44.77%5D%E8%BF%98%E6%98%AF%E6%9B%B4%E7%83%82%5Cn%5B01%3A45.92%5D%5Cn%5B01%3A49.09%5D%E5%AF%B9%E6%88%91%E8%80%8C%E8%A8%80%5Cn%5B01%3A50.49%5D%E6%98%AF%E5%8F%A6%E4%B8%80%E5%A4%A9%5Cn%5B01%3A51.93%5D%5Cn%5B01%3A53.35%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E6%AF%81%E4%BA%86%E6%88%91%E7%9A%84%E4%B8%80%E5%88%87%5Cn%5B01%3A56.59%5D%E5%8F%AA%E6%83%B3%E6%B0%B8%E8%BF%9C%E5%9C%B0%E7%A6%BB%E5%BC%80%5Cn%5B01%3A59.10%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E5%A0%95%E5%85%A5%E6%97%A0%E8%BE%B9%E9%BB%91%E6%9A%97%5Cn%5B02%3A02.29%5D%E6%83%B3%E6%8C%A3%E6%89%8E%E6%97%A0%E6%B3%95%E8%87%AA%E6%8B%94%5Cn%5B02%3A05.00%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E5%83%8F%E4%BD%A0%E5%83%8F%E4%BB%96%5Cn%5B02%3A07.28%5D%E5%83%8F%E9%82%A3%E9%87%8E%E8%8D%89%E9%87%8E%E8%8A%B1%5Cn%5B02%3A10.85%5D%E7%BB%9D%E6%9C%9B%E7%9D%80%5Cn%5B02%3A12.08%5D%E4%B9%9F%E6%B8%B4%E6%9C%9B%E7%9D%80%5Cn%5B02%3A13.50%5D%E4%B9%9F%E5%93%AD%E4%B9%9F%E7%AC%91%E5%B9%B3%E5%87%A1%E7%9D%80%5Cn%5B02%3A16.69%5D%5Cn%5B02%3A40.52%5Dwooh%5Cn%5B02%3A41.61%5D%5Cn%5B02%3A46.31%5Dyeah%5Cn%5B02%3A47.69%5D%5Cn%5B02%3A51.76%5Dla%20mo%5Cn%5B02%3A53.54%5D%5Cn%5B02%3A57.32%5Dza%20so%5Cn%5B03%3A01.43%5D%5Cn%5B03%3A03.28%5D%E5%90%91%E5%89%8D%E8%B5%B0%5Cn%5B03%3A04.74%5D%E5%B0%B1%E8%BF%99%E4%B9%88%E8%B5%B0%5Cn%5B03%3A06.13%5D%E5%B0%B1%E7%AE%97%E4%BD%A0%E8%A2%AB%E7%BB%99%E8%BF%87%E4%BB%80%E4%B9%88%5Cn%5B03%3A09.02%5D%E5%90%91%E5%89%8D%E8%B5%B0%5Cn%5B03%3A10.48%5D%E5%B0%B1%E8%BF%99%E4%B9%88%E8%B5%B0%5Cn%5B03%3A11.90%5D%E5%B0%B1%E7%AE%97%E4%BD%A0%E8%A2%AB%E5%A4%BA%E8%B5%B0%E4%BB%80%E4%B9%88%5Cn%5B03%3A14.75%5D%E5%90%91%E5%89%8D%E8%B5%B0%5Cn%5B03%3A16.22%5D%E5%B0%B1%E8%BF%99%E4%B9%88%E8%B5%B0%5Cn%5B03%3A17.62%5D%E5%B0%B1%E7%AE%97%E4%BC%9A%E9%94%99%E8%BF%87%E4%BB%80%E4%B9%88%5Cn%5B03%3A20.44%5D%E5%90%91%E5%89%8D%E8%B5%B0%5Cn%5B03%3A21.88%5D%E5%B0%B1%E8%BF%99%E4%B9%88%E8%B5%B0%5Cn%5B03%3A23.26%5D%E5%B0%B1%E7%AE%97%E4%BC%9A%5Cn%5B03%3A24.73%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E8%B7%A8%E8%BF%87%E5%B1%B1%E5%92%8C%E5%A4%A7%E6%B5%B7%5Cn%5B03%3A27.98%5D%E4%B9%9F%E7%A9%BF%E8%BF%87%E4%BA%BA%E5%B1%B1%E4%BA%BA%E6%B5%B7%5Cn%5B03%3A30.34%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E6%8B%A5%E6%9C%89%E7%9D%80%E7%9A%84%E4%B8%80%E5%88%87%5Cn%5B03%3A33.71%5D%E8%BD%AC%E7%9C%BC%E9%83%BD%E9%A3%98%E6%95%A3%E5%A6%82%E7%83%9F%5Cn%5B03%3A36.16%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E5%A4%B1%E8%90%BD%E5%A4%B1%E6%9C%9B%5Cn%5B03%3A38.65%5D%E5%A4%B1%E6%8E%89%E6%89%80%E6%9C%89%E6%96%B9%E5%90%91%5Cn%5B03%3A41.57%5D%5Cn%5B03%3A42.17%5D%E7%9B%B4%E5%88%B0%E7%9C%8B%E8%A7%81%E5%B9%B3%E5%87%A1%5Cn%5B03%3A44.97%5D%E6%89%8D%E6%98%AF%E5%94%AF%E4%B8%80%E7%9A%84%E7%AD%94%E6%A1%88%5Cn%5B03%3A47.55%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E6%AF%81%E4%BA%86%E6%88%91%E7%9A%84%E4%B8%80%E5%88%87%5Cn%5B03%3A50.79%5D%E5%8F%AA%E6%83%B3%E6%B0%B8%E8%BF%9C%E5%9C%B0%E7%A6%BB%E5%BC%80%5Cn%5B03%3A53.27%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E5%A0%95%E5%85%A5%E6%97%A0%E8%BE%B9%E9%BB%91%E6%9A%97%5Cn%5B03%3A56.55%5D%E6%83%B3%E6%8C%A3%E6%89%8E%E6%97%A0%E6%B3%95%E8%87%AA%E6%8B%94%5Cn%5B03%3A59.00%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E5%83%8F%E4%BD%A0%E5%83%8F%E4%BB%96%5Cn%5B04%3A01.53%5D%E5%83%8F%E9%82%A3%E9%87%8E%E8%8D%89%E9%87%8E%E8%8A%B1%5Cn%5B04%3A05.11%5D%E7%BB%9D%E6%9C%9B%E7%9D%80%5Cn%5B04%3A06.56%5D%E6%B8%B4%E6%9C%9B%E7%9D%80%5Cn%5B04%3A07.80%5D%E4%B9%9F%E5%93%AD%E4%B9%9F%E7%AC%91%E7%9A%84%E5%B9%B3%E5%87%A1%E7%9D%80%5Cn%5B04%3A10.36%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E8%B7%A8%E8%BF%87%E5%B1%B1%E5%92%8C%E5%A4%A7%E6%B5%B7%5Cn%5B04%3A13.71%5D%E4%B9%9F%E7%A9%BF%E8%BF%87%E4%BA%BA%E5%B1%B1%E4%BA%BA%E6%B5%B7%5Cn%5B04%3A16.07%5D%E6%88%91%E6%9B%BE%E7%BB%8F%E9%97%AE%E9%81%8D%E6%95%B4%E4%B8%AA%E4%B8%96%E7%95%8C%5Cn%5B04%3A19.39%5D%E4%BB%8E%E6%9D%A5%E6%B2%A1%E5%BE%97%E5%88%B0%E7%AD%94%E6%A1%88%5Cn%5B04%3A21.83%5D%E6%88%91%E4%B8%8D%E8%BF%87%E5%83%8F%E4%BD%A0%E5%83%8F%E4%BB%96%5Cn%5B04%3A24.40%5D%E5%83%8F%E9%82%A3%E9%87%8E%E8%8D%89%E9%87%8E%E8%8A%B1%5Cn%5B04%3A27.98%5D%E5%86%A5%E5%86%A5%E4%B8%AD%5Cn%5B04%3A29.42%5D%E8%BF%99%E6%98%AF%E6%88%91%5Cn%5B04%3A30.66%5D%E5%94%AF%E4%B8%80%E8%A6%81%E8%B5%B0%E7%9A%84%E8%B7%AF%E5%95%8A%5Cn%5B04%3A33.53%5D%5Cn%5B04%3A34.72%5D%E6%97%B6%E9%97%B4%E6%97%A0%E8%A8%80%5Cn%5B04%3A36.30%5D%E5%A6%82%E6%AD%A4%E8%BF%99%E8%88%AC%5Cn%5B04%3A37.61%5D%5Cn%5B04%3A40.54%5D%E6%98%8E%E5%A4%A9%E5%B7%B2%E5%9C%A8hia%20hia%5Cn%5B04%3A43.62%5D%5Cn%5B04%3A46.24%5D%E9%A3%8E%E5%90%B9%E8%BF%87%E7%9A%84%5Cn%5B04%3A47.67%5D%E8%B7%AF%E4%BE%9D%E7%84%B6%E8%BF%9C%5Cn%5B04%3A48.78%5D%5Cn%5B04%3A51.96%5D%E4%BD%A0%E7%9A%84%E6%95%85%E4%BA%8B%E8%AE%B2%E5%88%B0%E4%BA%86%E5%93%AA%5Cn%22%2C%22originalPrice%22%3A20%2C%22currentPrice%22%3A10%2C%22songHeat%22%3Anull%2C%22createBy%22%3A%22%E5%A4%A7%E8%87%B4%22%2C%22createTime%22%3A%222024-05-13T20%3A14%3A17.000%2B08%3A00%22%2C%22modifyBy%22%3Anull%2C%22modifyTime%22%3Anull%2C%22status%22%3A0%2C%22reviewStatus%22%3A2%2C%22userId%22%3A1%2C%22isCollect%22%3A1%7D",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "上传歌曲",
+          "pathName": "pages/upSong/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "录音棚详情",
+          "pathName": "pages/tabbar/recording/details",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "录音棚",
+          "pathName": "pages/tabbar/recording/recording",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "音乐播放",
+          "pathName": "pages/play/play",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "制作人排行",
+          "pathName": "pages/producer/producer",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "完善个人信息",
+          "pathName": "pages/upUserInfo/upUserInfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "排行榜",
+          "pathName": "pages/ranking/ranking",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/tabbar/center/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的作品",
+          "pathName": "pages/singer/singer",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "录音棚",
+          "pathName": "pages/tabbar/recording/recording",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "登录",
+          "pathName": "pages/login/login",
+          "query": "type=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "首页",
+          "pathName": "pages/tabbar/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "projectname": "uView-demo",
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "libVersion": "3.5.1"
+}

@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.data-v-36b5ada6 .u-tabbar__content .u-tabbar__content__circle .u-icon__img {
+  width: 82rpx !important;
+  height: 82rpx !important;
+}
+.data-v-36b5ada6 .u-tabbar__content .u-icon__img {
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.data-v-36b5ada6 .u-tabbar__content__circle__border {
+  top: 0 !important;
+}
+.data-v-36b5ada6 .u-tabbar__content__circle__button {
+  top: 4px !important;
+}
+.content.data-v-36b5ada6 {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: url("https://image-file2024.oss-cn-beijing.aliyuncs.com/geWoLiMusicMall/backgroundImage/image1.jpg");
+  background-size: 100% 100%;
+}
+.header .index_swiper.data-v-36b5ada6 {
+  width: 686rpx;
+  margin: 20rpx auto 0;
+  border-radius: 20rpx;
+  overflow: hidden;
+  height: 304rpx;
+}
+.header .index_swiper image.data-v-36b5ada6 {
+  width: 686rpx;
+  height: 304rpx;
+}
+.tabView.data-v-36b5ada6 {
+  width: 686rpx;
+  margin: 40rpx auto 0;
+  color: #999;
+  display: flex;
+}
+.tabView .icon.data-v-36b5ada6 {
+  margin-left: auto;
+}
+.slvlNum.data-v-36b5ada6 {
+  font-size: 28rpx;
+  width: 48rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+}
+image.data-v-36b5ada6 {
+  width: 48rpx;
+  height: 48rpx;
+}
+.slvBtn.data-v-36b5ada6 {
+  width: 100rpx;
+  text-align: center;
+  color: #999999;
+  font-size: 20rpx;
+}
+.slvBtn image.data-v-36b5ada6 {
+  width: 34rpx;
+  height: 34rpx;
+}
+.slvCover.data-v-36b5ada6 {
+  margin-left: 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  overflow: hidden;
+  position: relative;
+}
+.slvcImg.data-v-36b5ada6 {
+  width: 120rpx;
+  height: 120rpx;
+}
+.slvcPlay.data-v-36b5ada6 {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.singList.data-v-36b5ada6 {
+  width: 686rpx;
+  margin: 40rpx auto 0;
+  display: flex;
+  align-items: center;
+}
+.slView.data-v-36b5ada6 {
+  margin-bottom: 10rpx;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 20rpx;
+  background: #fff;
+}
+.slvMain.data-v-36b5ada6 {
+  margin-left: 16rpx;
+  width: 384rpx;
+}
+.slvmTit.data-v-36b5ada6 {
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.slvmTxt.data-v-36b5ada6 {
+  font-size: 20rpx;
+  margin-top: 10rpx;
+}
+.slvmTxt1.data-v-36b5ada6 {
+  font-size: 16rpx;
+  color: #999999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+

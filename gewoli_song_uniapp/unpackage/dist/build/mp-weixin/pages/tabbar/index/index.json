@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "heads": "/components/heads/heads",
+    "u-icon": "/uview-ui/components/u-icon/u-icon",
+    "t-tabs": "/components/tTabs/tTabs",
+    "u-empty": "/uview-ui/components/u-empty/u-empty",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "u-tabbar": "/uview-ui/components/u-tabbar/u-tabbar",
+    "play-bottom": "/components/PlayBottom"
+  }
+}

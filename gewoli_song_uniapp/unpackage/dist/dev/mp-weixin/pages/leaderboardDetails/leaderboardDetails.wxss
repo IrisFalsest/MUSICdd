@@ -1,0 +1,247 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.data-v-4f18f226 .u-tabbar__content .u-tabbar__content__circle .u-icon__img {
+  width: 82rpx !important;
+  height: 82rpx !important;
+}
+.data-v-4f18f226 .u-tabbar__content .u-icon__img {
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.data-v-4f18f226 .u-tabbar__content__circle__border {
+  top: 0 !important;
+}
+.data-v-4f18f226 .u-tabbar__content__circle__button {
+  top: 4px !important;
+}
+.bg_img.data-v-4f18f226 {
+  width: 100%;
+  height: 800rpx;
+}
+.bg_img image.data-v-4f18f226 {
+  width: 100%;
+  height: 100%;
+}
+.bg_text.data-v-4f18f226 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: black;
+}
+.bg_text .bg_text_box.data-v-4f18f226 {
+  margin: 40rpx;
+}
+.bg_text .bg_text_box .bg_text_box_title.data-v-4f18f226 {
+  font-size: 50rpx;
+}
+.bg_text .bg_text_box .tllnTxt.data-v-4f18f226 {
+  font-size: 24rpx;
+  margin-top: 5rpx;
+}
+.renwu.data-v-4f18f226 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  font-size: 26rpx;
+}
+.renwu .renwu_btn.data-v-4f18f226 {
+  color: #1bd66c;
+  margin-left: 20rpx;
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  font-size: 24rpx;
+  border: 2rpx solid #1bd66c;
+}
+.pop.data-v-4f18f226 {
+  transition: height 0.3s ease;
+  padding: 32rpx;
+  color: #000;
+}
+.pop .pTit.data-v-4f18f226 {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.tlLi.data-v-4f18f226 {
+  margin-bottom: 32rpx;
+  display: flex;
+  align-items: center;
+}
+.tlLi .tllNum.data-v-4f18f226 {
+  color: #000;
+  text-align: center;
+}
+.tlLi .tllNum .tllnumTxt.data-v-4f18f226 {
+  font-size: 20rpx;
+  font-weight: 500;
+}
+.tlLi .tllNum .num.data-v-4f18f226 {
+  font-size: 40rpx;
+  font-weight: 800;
+}
+.tlLi .tllImg.data-v-4f18f226 {
+  margin-left: 20rpx;
+}
+.tlLi .tllImg image.data-v-4f18f226 {
+  width: 190rpx;
+  height: 250rpx;
+  border-radius: 8rpx;
+}
+.tlLi .tllName.data-v-4f18f226 {
+  color: #000;
+  margin-left: 20rpx;
+}
+.tlLi .tllName .tllnTit.data-v-4f18f226 {
+  font-weight: 500;
+  font-size: 28rpx;
+}
+.tlLi .tllName .tllnTxt.data-v-4f18f226 {
+  width: 300rpx;
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  color: #000;
+}
+.tlLi .tllHot.data-v-4f18f226 {
+  margin-left: auto;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.tlLi .tllHot .zhichi_btn.data-v-4f18f226 {
+  background-color: #f83859;
+  width: 130rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+.tlLi.data-v-4f18f226:last-child {
+  margin-bottom: 0;
+}
+.view.data-v-4f18f226 {
+  background: linear-gradient(92deg, #ffd0a4 0%, #fab06c 33%, #fab06c 73%, #ffc996 100%);
+  width: 686rpx;
+  height: 96rpx;
+  border: 4rpx solid #fda149;
+  margin: 30rpx auto 0;
+  border-radius: 58rpx 58rpx 58rpx 58rpx;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: 800;
+}
+.bm_box.data-v-4f18f226 {
+  position: absolute;
+  top: 20%;
+  right: 0;
+}
+.bm_box .baoming.data-v-4f18f226 {
+  width: 120rpx;
+  height: 70rpx;
+  background-color: white;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  border-radius: 50rpx 0rpx 0rpx 50rpx;
+  line-height: 70rpx;
+}
+.gold.data-v-4f18f226 {
+  color: #fcc546;
+  /* 金色 */
+}
+.silver.data-v-4f18f226 {
+  color: #c0c0c0;
+  /* 银色 */
+}
+.bronze.data-v-4f18f226 {
+  color: #cd7f32;
+  /* 铜色 */
+}
+.goodList.data-v-4f18f226 {
+  width: 686rpx;
+  height: 850rpx;
+  margin: 34rpx auto;
+}
+.demo-warter.data-v-4f18f226 {
+  margin: 20px 5rpx;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  position: relative;
+  overflow: hidden;
+}
+.demo-warter .demo-warter-hide.data-v-4f18f226 {
+  border-radius: 16rpx 16rpx 0 0;
+  overflow: hidden;
+}
+.pLeft.data-v-4f18f226 {
+  margin-right: 33rpx;
+}
+.pRight.data-v-4f18f226 {
+  margin-left: 21rpx;
+}
+.giftScore.data-v-4f18f226 {
+  font-size: 24rpx;
+  color: #fc3758;
+  margin-top: 20rpx;
+  width: 200rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  background-color: #ffeef4;
+  text-align: center;
+  line-height: 50rpx;
+}
+.u-close.data-v-4f18f226 {
+  position: absolute;
+  top: 32rpx;
+  right: 32rpx;
+}
+.demo-image.data-v-4f18f226 {
+  width: 100%;
+  border-radius: 4px;
+}
+.demo-title.data-v-4f18f226 {
+  font-size: 24rpx;
+  margin-top: 5px;
+  padding: 0 16rpx;
+  color: #000;
+}
+.demo-price.data-v-4f18f226 {
+  font-size: 30rpx;
+  color: #fa3534;
+  margin-top: 5px;
+  padding: 0 16rpx;
+  display: flex;
+  align-items: center;
+}
+.demo-price .red.data-v-4f18f226 {
+  color: #fb3758;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+.demo-price .price.data-v-4f18f226 {
+  font-size: 28rpx;
+  font-weight: 800;
+}
+.demo-price .orPrice.data-v-4f18f226 {
+  margin-left: auto;
+  font-size: 20rpx;
+  color: rgba(153, 153, 153, 0.6);
+  text-decoration: line-through;
+}
+.demo-shop.data-v-4f18f226 {
+  font-size: 20rpx;
+  padding: 0 16rpx;
+  color: #999999;
+  margin-top: 5px;
+}
+

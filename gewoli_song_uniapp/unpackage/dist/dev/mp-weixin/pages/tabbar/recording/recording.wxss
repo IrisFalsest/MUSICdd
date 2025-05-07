@@ -1,0 +1,115 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.data-v-c207534a .u-tabbar__content .u-tabbar__content__circle .u-icon__img {
+  width: 82rpx !important;
+  height: 82rpx !important;
+}
+.data-v-c207534a .u-tabbar__content .u-icon__img {
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.data-v-c207534a .u-tabbar__content__circle__border {
+  top: 0 !important;
+}
+.data-v-c207534a .u-tabbar__content__circle__button {
+  top: 4px !important;
+}
+.content.data-v-c207534a {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: url("https://image-file2024.oss-cn-beijing.aliyuncs.com/geWoLiMusicMall/backgroundImage/image1.jpg");
+  background-size: 100% 100%;
+}
+.tabView.data-v-c207534a {
+  width: 686rpx;
+  margin: 40rpx auto 32rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+.recordingList.data-v-c207534a {
+  width: 686rpx;
+  margin: 0 auto 0;
+  overflow: auto;
+}
+.recordingList .rLi.data-v-c207534a {
+  border-radius: 40rpx;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 20rpx;
+  background: #fff;
+  box-shadow: 0rpx 0rpx 62rpx 0rpx rgba(255, 239, 223, 0.5);
+}
+.recordingList .rLi .rlLeft.data-v-c207534a {
+  width: 250rpx;
+  height: 242rpx;
+}
+.recordingList .rLi .rlRight.data-v-c207534a {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 436rpx;
+  padding: 20rpx 40rpx 18rpx 22rpx;
+}
+.recordingList .rLi .rlRight .rlrTop.data-v-c207534a {
+  display: flex;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #000000;
+}
+.recordingList .rLi .rlRight .rlrTop .rlrtRight.data-v-c207534a {
+  margin-left: auto;
+  font-size: 22rpx;
+  line-height: 44rpx;
+  color: #999999;
+  font-weight: 500;
+}
+.recordingList .rLi .rlRight .rlrTop .rlrtRight image.data-v-c207534a {
+  width: 31rpx;
+  height: 31rpx;
+  vertical-align: middle;
+  margin-right: 12rpx;
+}
+.recordingList .rLi .rlRight .rlrTxt.data-v-c207534a {
+  color: #999999;
+  font-size: 20rpx;
+}
+.recordingList .rLi .rlRight .rlrTags.data-v-c207534a {
+  display: flex;
+}
+.recordingList .rLi .rlRight .rlrTags .rTag.data-v-c207534a {
+  margin-right: 12rpx;
+  padding: 4rpx 10rpx;
+  background: #E5E5E5;
+  border-radius: 20rpx;
+  color: #999999;
+  font-size: 20rpx;
+}
+.recordingList .rLi .rlRight .rlrAddress.data-v-c207534a {
+  font-size: 20rpx;
+  color: #999999;
+  display: flex;
+  align-items: center;
+}
+.recordingList .rLi .rlRight .rlrAddress image.data-v-c207534a {
+  width: 36rpx;
+  height: 36rpx;
+}
+.recordingList .rLi .rlRight .rlrPrice .red.data-v-c207534a {
+  color: #FC3758;
+  font-size: 28rpx;
+}
+.recordingList .rLi .rlRight .rlrPrice .blak.data-v-c207534a {
+  font-size: 20rpx;
+  text-decoration: line-through;
+  color: rgba(153, 153, 153, 0.6);
+}
+.recordingList .rLi .rlRight .rlrPrice .rTxt2.data-v-c207534a {
+  display: inline-block;
+  margin-right: 5rpx;
+}
+

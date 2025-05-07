@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysComplaintRecordsMapper">
+
+    <resultMap type="com.ruoyi.system.entity.SysComplaintRecords" id="SysComplaintRecordsResult">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="reason" column="reason"/>
+        <result property="content" column="content"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifyBy" column="modify_by"/>
+        <result property="modifyTime" column="modify_time"/>
+    </resultMap>
+
+    <sql id="selectSysComplaintRecordsVo">
+        select id,
+               user_id,
+               reason,
+               content,
+               phone_number,
+               create_by,
+               create_time,
+               modify_by,
+               modify_time
+        from sys_complaint_records
+    </sql>
+
+    <select id="selectSysComplaintRecordsList" parameterType="com.ruoyi.system.entity.SysComplaintRecords"
+            resultMap="SysComplaintRecordsResult">
+        <include refid="selectSysComplaintRecordsVo"/>
+        <where>
+            <if test="userId != null ">and user_id = #{userId}</if>
+            <if test="reason != null  and reason != ''">and reason = #{reason}</if>
+            <if test="content != null  and content != ''">and content = #{content}</if>
+            <if test="phoneNumber != null  and phoneNumber != ''">and phone_number = #{phoneNumber}</if>
+            <if test="modifyBy != null  and modifyBy != ''">and modify_by = #{modifyBy}</if>
+            <if test="modifyTime != null ">and modify_time = #{modifyTime}</if>
+        </where>
+    </select>
+
+    <select id="selectSysComplaintRecordsById" parameterType="Long" resultMap="SysComplaintRecordsResult">
+        <include refid="selectSysComplaintRecordsVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertSysComplaintRecords" parameterType="com.ruoyi.system.entity.SysComplaintRecords"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into sys_complaint_records
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="reason != null">reason,</if>
+            <if test="content != null">content,</if>
+            <if test="phoneNumber != null">phone_number,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="modifyBy != null">modify_by,</if>
+            <if test="modifyTime != null">modify_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="content != null">#{content},</if>
+            <if test="phoneNumber != null">#{phoneNumber},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="modifyBy != null">#{modifyBy},</if>
+            <if test="modifyTime != null">#{modifyTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateSysComplaintRecords" parameterType="com.ruoyi.system.entity.SysComplaintRecords">
+        update sys_complaint_records
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="reason != null">reason = #{reason},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="phoneNumber != null">phone_number = #{phoneNumber},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="modifyBy != null">modify_by = #{modifyBy},</if>
+            <if test="modifyTime != null">modify_time = #{modifyTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysComplaintRecordsById" parameterType="Long">
+        delete
+        from sys_complaint_records
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteSysComplaintRecordsByIds" parameterType="String">
+        delete from sys_complaint_records where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

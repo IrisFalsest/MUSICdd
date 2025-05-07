@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysConsumptionRecordMapper">
+
+    <resultMap type="com.ruoyi.system.entity.SysConsumptionRecord" id="SysConsumptionRecordResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="scoreType"    column="score_type"    />
+        <result property="scoreSource"    column="score_source"    />
+        <result property="score"    column="score"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="modifyBy"    column="modify_by"    />
+        <result property="modifyTime"    column="modify_time"    />
+    </resultMap>
+
+    <sql id="selectSysConsumptionRecordVo">
+        select id, user_id,score_type,score_source, score, create_by, create_time, modify_by, modify_time from sys_consumption_record
+    </sql>
+
+    <select id="selectSysConsumptionRecordList" parameterType="com.ruoyi.system.entity.SysConsumptionRecord" resultMap="SysConsumptionRecordResult">
+        <include refid="selectSysConsumptionRecordVo"/>
+        <where>
+            <if test="userId != null "> and user_id = #{userId}</if>
+             <if test="scoreType != null "> and score_type = #{scoreType}</if>
+             <if test="scoreSource != null  and scoreSource != ''"> and score_source = #{scoreSource}</if>
+            <if test="score != null "> and score = #{score}</if>
+            <if test="modifyBy != null  and modifyBy != ''"> and modify_by = #{modifyBy}</if>
+            <if test="modifyTime != null "> and modify_time = #{modifyTime}</if>
+        </where>
+    </select>
+
+    <select id="selectSysConsumptionRecordById" parameterType="Long" resultMap="SysConsumptionRecordResult">
+        <include refid="selectSysConsumptionRecordVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertSysConsumptionRecord" parameterType="com.ruoyi.system.entity.SysConsumptionRecord" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_consumption_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="scoreType != null">score_type,</if>
+            <if test="scoreSource != null">score_source,</if>
+            <if test="score != null">score,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="modifyBy != null">modify_by,</if>
+            <if test="modifyTime != null">modify_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="score != null">#{score},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="modifyBy != null">#{modifyBy},</if>
+            <if test="modifyTime != null">#{modifyTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateSysConsumptionRecord" parameterType="com.ruoyi.system.entity.SysConsumptionRecord">
+        update sys_consumption_record
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="scoreType != null">score_type = #{scoreType},</if>
+            <if test="scoreSource != null">score_source = #{scoreSource},</if>
+            <if test="score != null">score = #{score},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="modifyBy != null">modify_by = #{modifyBy},</if>
+            <if test="modifyTime != null">modify_time = #{modifyTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysConsumptionRecordById" parameterType="Long">
+        delete from sys_consumption_record where id = #{id}
+    </delete>
+
+    <delete id="deleteSysConsumptionRecordByIds" parameterType="String">
+        delete from sys_consumption_record where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

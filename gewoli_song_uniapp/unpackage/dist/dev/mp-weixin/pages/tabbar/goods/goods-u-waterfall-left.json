@@ -1,0 +1,15 @@
+{
+  "component": true,
+  "usingComponents": {
+    "goods-u-waterfall-left": "/pages/tabbar/goods/goods-u-waterfall-left",
+    "goods-u-waterfall-right": "/pages/tabbar/goods/goods-u-waterfall-right",
+    "heads": "/components/heads/heads",
+    "u-notice-bar": "/uview-ui/components/u-notice-bar/u-notice-bar",
+    "t-tabs": "/components/tTabs/tTabs",
+    "u-waterfall": "/uview-ui/components/u-waterfall/u-waterfall",
+    "u-lazy-load": "/uview-ui/components/u-lazy-load/u-lazy-load",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
+    "u-tabbar": "/uview-ui/components/u-tabbar/u-tabbar",
+    "play-bottom": "/components/PlayBottom"
+  }
+}

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysMobileEndUserMapper">
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ruoyi.system.entity.SysMobileEndUser">
+        <id column="id" property="id"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="stage_name" property="stageName"/>
+        <result column="phone" property="phone"/>
+        <result column="work_unit" property="workUnit"/>
+        <result column="balance" property="balance"/>
+        <result column="score" property="score"/>
+        <result column="open_id" property="openId"/>
+        <result column="name" property="name"/>
+        <result column="card_no" property="cardNo"/>
+        <result column="card_front" property="cardFront"/>
+        <result column="card_back" property="cardBack"/>
+        <result column="birth_date" property="birthDate"/>
+        <result column="sex" property="sex"/>
+        <result column="role_type" property="roleType"/>
+        <result column="status" property="status"/>
+        <result column="login_type" property="loginType"/>
+        <result column="create_time" property="createTime"/>
+        <result column="modify_time" property="modifyTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id
+        , nick_name, stage_name, phone, work_unit, balance, score, open_id, name, card_no, card_front, card_back, birth_date, sex, role_type, status, login_type, create_time, modify_time
+    </sql>
+
+    <update id="signInPhoneNumber">
+        update sys_mobile_end_user
+        set phone = #{phoneNumber}
+        where id = #{id}
+    </update>
+
+    <update id="modifyUserRoleTypeByUserId">
+        update sys_mobile_end_user
+        set role_type = #{roleType}
+        where id = #{userId}
+    </update>
+
+    <select id="findMobileEndUserWorksByUserId" resultType="com.ruoyi.system.domain.vo.SysSongVo"
+            parameterType="java.lang.Long">
+        select song_name,
+               duration,
+               song_cover_photo_url,
+               song_file_url,
+               song_lyrics,
+               original_price,
+               current_price,
+               u.nick_name as createUser
+        from sys_song as s
+                 left join sys_mobile_end_user as u on u.id = s.create_by
+        where c.user_id = #{userId}
+        order by c.create_time desc
+    </select>
+
+    <resultMap type="com.ruoyi.system.entity.SysMobileEndUser" id="SysMobileEndUserResult">
+        <result property="id" column="id"/>
+        <result property="avatar" column="avatar"/>
+        <result property="backgroundImage" column="background_image"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="stageName" column="stage_name"/>
+        <result property="phone" column="phone"/>
+        <result property="workUnit" column="work_unit"/>
+        <result property="balance" column="balance"/>
+        <result property="score" column="score"/>
+        <result property="openId" column="open_id"/>
+        <result property="name" column="name"/>
+        <result property="cardNo" column="card_no"/>
+        <result property="cardFront" column="card_front"/>
+        <result property="cardBack" column="card_back"/>
+        <result property="birthDate" column="birth_date"/>
+        <result property="sex" column="sex"/>
+        <result property="remark" column="remark"/>
+        <result property="roleType" column="role_type"/>
+        <result property="signStatus" column="sign_status"/>
+        <result property="isSign" column="is_sign"/>
+        <result property="signTime" column="sign_time"/>
+        <result property="status" column="status"/>
+        <result property="loginType" column="login_type"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifyBy" column="modify_by"/>
+        <result property="modifyTime" column="modify_time"/>
+    </resultMap>
+
+    <sql id="selectSysMobileEndUserVo">
+        select id,
+               avatar,
+               background_image,
+               nick_name,
+               stage_name,
+               phone,
+               work_unit,
+               balance,
+               score,
+               open_id,
+               name,
+               card_no,
+               card_front,
+               card_back,
+               birth_date,
+               sex,
+               remark,
+               role_type,
+               sign_status,
+               is_sign,
+               sign_time,
+               status,
+               login_type,
+               create_by,
+               create_time,
+               modify_by,
+               modify_time
+        from sys_mobile_end_user
+    </sql>
+
+    <select id="selectSysMobileEndUserList" parameterType="com.ruoyi.system.entity.SysMobileEndUser"
+            resultMap="SysMobileEndUserResult">
+        <include refid="selectSysMobileEndUserVo"/>
+        <where>
+            <if test="avatar != null  and avatar != ''">and avatar = #{avatar}</if>
+            <if test="backgroundImage != null  and backgroundImage != ''">and background_image = #{backgroundImage}</if>
+            <if test="nickName != null  and nickName != ''">and nick_name like concat('%', #{nickName}, '%')</if>
+            <if test="stageName != null  and stageName != ''">and stage_name like concat('%', #{stageName}, '%')</if>
+            <if test="phone != null  and phone != ''">and phone = #{phone}</if>
+            <if test="workUnit != null  and workUnit != ''">and work_unit = #{workUnit}</if>
+            <if test="balance != null ">and balance = #{balance}</if>
+            <if test="score != null ">and score = #{score}</if>
+            <if test="openId != null  and openId != ''">and open_id = #{openId}</if>
+            <if test="name != null  and name != ''">and name like concat('%', #{name}, '%')</if>
+            <if test="cardNo != null  and cardNo != ''">and card_no = #{cardNo}</if>
+            <if test="cardFront != null  and cardFront != ''">and card_front = #{cardFront}</if>
+            <if test="cardBack != null  and cardBack != ''">and card_back = #{cardBack}</if>
+            <if test="birthDate != null  and birthDate != ''">and birth_date = #{birthDate}</if>
+            <if test="sex != null  and sex != ''">and sex = #{sex}</if>
+            <if test="roleType != null ">and role_type = #{roleType}</if>
+            <if test="signStatus != null ">and sign_status = #{signStatus}</if>
+            <if test="isSign != null ">and is_sign = #{isSign}</if>
+            <if test="signTime != null ">and sign_time = #{signTime}</if>
+            <if test="status != null ">and status = #{status}</if>
+            <if test="loginType != null ">and login_type = #{loginType}</if>
+            <if test="modifyBy != null  and modifyBy != ''">and modify_by = #{modifyBy}</if>
+            <if test="modifyTime != null ">and modify_time = #{modifyTime}</if>
+        </where>
+    </select>
+
+    <select id="selectSysMobileEndUserById" parameterType="Long" resultMap="SysMobileEndUserResult">
+        <include refid="selectSysMobileEndUserVo"/>
+        where id = #{id}
+    </select>
+
+
+    <update id="updateSysMobileEndUser" parameterType="com.ruoyi.system.entity.SysMobileEndUser">
+        update sys_mobile_end_user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="avatar != null and avatar != ''">avatar = #{avatar},</if>
+            <if test="backgroundImage != null">background_image = #{backgroundImage},</if>
+            <if test="nickName != null">nick_name = #{nickName},</if>
+            <if test="stageName != null">stage_name = #{stageName},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="workUnit != null">work_unit = #{workUnit},</if>
+            <if test="balance != null">balance = #{balance},</if>
+            <if test="score != null">score = #{score},</if>
+            <if test="openId != null">open_id = #{openId},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="cardNo != null">card_no = #{cardNo},</if>
+            <if test="cardFront != null">card_front = #{cardFront},</if>
+            <if test="cardBack != null">card_back = #{cardBack},</if>
+            <if test="birthDate != null">birth_date = #{birthDate},</if>
+            <if test="sex != null">sex = #{sex},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="roleType != null">role_type = #{roleType},</if>
+            <if test="signStatus != null">sign_status = #{signStatus},</if>
+            <if test="isSign != null">is_sign = #{isSign},</if>
+            <if test="signTime != null">sign_time = #{signTime},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="loginType != null">login_type = #{loginType},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="modifyBy != null">modify_by = #{modifyBy},</if>
+            <if test="modifyTime != null">modify_time = #{modifyTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <update id="modifyUserIdentityInfo" parameterType="com.ruoyi.system.entity.SysMobileEndUser">
+        update sys_mobile_end_user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="cardNo != null">card_no = #{cardNo},</if>
+            <if test="sex != null">sex = #{sex},</if>
+            <if test="reviewPhone != null">review_phone = #{reviewPhone},</if>
+            <if test="stageName != null">stage_name = #{stageName},</if>
+            <if test="workUnit != null">work_unit = #{workUnit},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="musiciansReviewStatus != null">musicians_review_status = #{musiciansReviewStatus},</if>
+            <if test="producerReviewStatus != null">producer_review_status = #{producerReviewStatus},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <update id="musiciansReview">
+        update sys_mobile_end_user
+        set musicians_review_status = #{status}
+        <if test="avatar != null and avatar == ''">
+            ,avatar = #{avatar}
+        </if>
+        <if test="null != status and status == 3">
+            ,role_type = 2
+            ,sign_time = now()
+        </if>
+        where id = #{userId}
+    </update>
+
+    <update id="producerReview">
+        update sys_mobile_end_user
+        set producer_review_status = #{status}
+        <if test="avatar != null and avatar == ''">
+            ,avatar = #{avatar}
+        </if>
+        <if test="null != status and status == 3">
+            ,role_type = 3
+            ,sign_time = now()
+        </if>
+        where id = #{userId}
+    </update>
+
+    <update id="musiciansSign">
+        update sys_mobile_end_user
+        set musicians_sign_status = #{status}
+        where id = #{userId}
+    </update>
+
+    <delete id="deleteSysMobileEndUserById" parameterType="Long">
+        delete
+        from sys_mobile_end_user
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteSysMobileEndUserByIds" parameterType="String">
+        delete from sys_mobile_end_user where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

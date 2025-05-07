@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysRankingMapper">
+
+    <!-- 开启二级缓存 -->
+    <!--    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ruoyi.system.entity.SysRanking">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="user_heat" property="userHeat"/>
+        <result column="score" property="score"/>
+        <result column="remark" property="remark"/>
+        <result column="competition_zone" property="competitionZone"/>
+        <result column="participating_photo" property="participatingPhoto"/>
+        <result column="entry_declaration" property="entryDeclaration"/>
+        <result column="ranking_type" property="rankingType"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="modify_by" property="modifyBy"/>
+        <result column="modify_time" property="modifyTime"/>
+        <result column="status" property="status"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id
+        , user_id, user_heat, score, remark, competition_zone, participating_photo, entry_declaration, ranking_type, create_by, create_time, modify_by, modify_time, status
+    </sql>
+
+    <!--    <select id="findRankingByNotSignProducerType" resultType="com.ruoyi.system.domain.vo.SysRankingVo">-->
+    <!--        select nick_name,-->
+    <!--               avatar,-->
+    <!--               r.remark,-->
+    <!--               user_heat * ((select c.proportion from sys_score_heat_config as c where c.`status` = 0) / 100)-->
+    <!--        from sys_ranking as r-->
+    <!--                 left join sys_mobile_end_user as u on u.id = r.user_id-->
+    <!--        where u.is_sign = 0-->
+    <!--          and r.ranking_type = #{type}-->
+    <!--          and u.`status` = 0-->
+    <!--          and r.`status` = 0-->
+    <!--        order by u.score desc limit 0,50;-->
+    <!--    </select>-->
+
+    <select id="findRankingByNotSignProducerType" resultType="com.ruoyi.system.domain.vo.SysRankingVo">
+        select u.nick_name,
+        u.avatar,
+        u.sign_time,
+        u.id as userId,
+        u.remark,
+        u.score * ((select c.proportion from sys_score_heat_config as c where c.`status` = 0) / 100) as userHeat,
+        CASE WHEN f.follow_users IS NOT NULL THEN 1 ELSE 0 END AS is_follow
+        from sys_mobile_end_user as u
+        LEFT JOIN
+        sys_follow f
+        ON u.id = f.follow_users
+        AND f.user_id = #{userId}
+        where u.is_sign = 0
+        and u.role_type = 3
+        and u.`status` = 0
+        <if test="followUsers != null">
+            and u.id = #{followUsers}
+        </if>
+        order by u.score desc limit 0,50;
+    </select>
+
+    <!--    <select id="findRankingBySignProducerType" resultType="com.ruoyi.system.domain.vo.SysRankingVo">-->
+    <!--        select nick_name,-->
+    <!--               avatar,-->
+    <!--               r.remark,-->
+    <!--               sign_time,-->
+    <!--               user_heat * ((select c.proportion from sys_score_heat_config as c where c.`status` = 0) / 100)-->
+    <!--        from sys_ranking as r-->
+    <!--                 left join sys_mobile_end_user as u on u.id = r.user_id-->
+    <!--        where u.is_sign = 1-->
+    <!--          and r.ranking_type = 2-->
+    <!--          and u.`status` = 0-->
+    <!--          and r.`status` = 0-->
+    <!--        order by u.score desc limit 0,50;-->
+    <!--    </select>-->
+    <select id="findRankingBySignProducerType" resultType="com.ruoyi.system.domain.vo.SysRankingVo">
+        select u.nick_name,
+        u.avatar,
+        u.sign_time,
+        u.id as userId,
+        u.remark,
+        u.score * ((select c.proportion from sys_score_heat_config as c where c.`status` = 0) / 100) as userHeat,
+        CASE WHEN f.follow_users IS NOT NULL THEN 1 ELSE 0 END AS is_follow
+        from sys_mobile_end_user as u
+        LEFT JOIN
+        sys_follow f
+        ON u.id = f.follow_users
+        AND f.user_id = #{userId}
+        where u.is_sign = 1
+        and u.sign_status = 3
+        and u.role_type = 3
+        and u.`status` = 0
+        <if test="followUsers != null">
+            and u.id = #{followUsers}
+        </if>
+        order by u.score desc limit 0,50;
+    </select>
+
+    <!--    <select id="findRankingByNewEntrantsType" resultType="com.ruoyi.system.domain.vo.SysRankingVo">-->
+    <!--        select nick_name,-->
+    <!--               avatar,-->
+    <!--               r.remark,-->
+    <!--               user_heat * ((select c.proportion from sys_score_heat_config as c where c.`status` = 0) / 100)-->
+    <!--        from sys_ranking as r-->
+    <!--                 left join sys_mobile_end_user as u on u.id = r.user_id-->
+    <!--        where u.is_sign = 0-->
+    <!--          and r.ranking_type = 3-->
+    <!--          and u.`status` = 0-->
+    <!--          and r.`status` = 0-->
+    <!--          and DATEDIFF(u.create_time,NOW()) = 30-->
+    <!--        order by u.score desc limit 0,50;-->
+    <!--    </select>-->
+    <select id="findRankingByNewEntrantsType" resultType="com.ruoyi.system.domain.vo.SysRankingVo">
+        select u.nick_name,
+        u.avatar,
+        u.sign_time,
+        u.id as userId,
+        u.remark,
+        u.score * ((select c.proportion from sys_score_heat_config as c where c.`status` = 0) / 100) as userHeat,
+        CASE WHEN f.follow_users IS NOT NULL THEN 1 ELSE 0 END AS is_follow
+        from sys_mobile_end_user as u
+        LEFT JOIN
+        sys_follow f
+        ON u.id = f.follow_users
+        AND f.user_id = #{userId}
+        where u.is_sign = 0
+        and u.role_type = 3
+        and DATEDIFF(u.create_time, NOW()) &lt; 30
+        and u.`status` = 0
+        <if test="followUsers != null">
+            and u.id = #{followUsers}
+        </if>
+        order by u.score desc limit 0,50;
+    </select>
+
+    <select id="findRankingByMusicians" resultType="com.ruoyi.system.domain.vo.SysRankingVo">
+        select u.nick_name,
+        u.avatar,
+        u.sign_time,
+        u.id as userId,
+        u.remark,
+        u.score * ((select c.proportion from sys_score_heat_config as c where c.`status` = 0) / 100) as userHeat,
+        CASE WHEN f.follow_users IS NOT NULL THEN 1 ELSE 0 END AS is_follow
+        from sys_mobile_end_user as u
+        LEFT JOIN
+        sys_follow f
+        ON u.id = f.follow_users
+        AND f.user_id = #{userId}
+        where u.is_sign = 0
+        and u.role_type = 2
+        and u.`status` = 0
+        <if test="followUsers != null">
+            and u.id = #{followUsers}
+        </if>
+        order by u.score desc limit 0,50;
+    </select>
+
+    <select id="findRankingCount" resultType="java.lang.Long">
+        select count(1)
+        from sys_ranking
+        where ranking_type = 4
+          and `status` = 0
+    </select>
+
+    <select id="findRankingHeat" resultType="java.lang.Long">
+        select sum(u.score * ((select c.proportion from sys_score_heat_config as c where c.`status` = 0) / 100))
+        from sys_ranking as r
+                 left join sys_mobile_end_user as u on u.id = r.user_id
+        where r.ranking_type = 4
+          and r.`status` = 0
+    </select>
+
+
+    <resultMap type="com.ruoyi.system.entity.SysRanking" id="SysRankingResult">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="userHeat" column="user_heat"/>
+        <result property="remark" column="remark"/>
+        <result column="competition_zone" property="competitionZone"/>
+        <result column="participating_photo" property="participatingPhoto"/>
+        <result column="entry_declaration" property="entryDeclaration"/>
+        <result property="rankingType" column="ranking_type"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifyBy" column="modify_by"/>
+        <result property="modifyTime" column="modify_time"/>
+        <result property="status" column="status"/>
+    </resultMap>
+
+    <sql id="selectSysRankingVo">
+        select id,
+               user_id,
+               user_heat,
+               remark,
+               ranking_type,
+               competition_zone,
+               participating_photo,
+               entry_declaration,
+               create_by,
+               create_time,
+               modify_by,
+               modify_time,
+               status
+        from sys_ranking
+    </sql>
+
+    <select id="selectSysRankingList" parameterType="com.ruoyi.system.entity.SysRanking"
+            resultType="com.ruoyi.system.domain.vo.SysBackRankingVo">
+        select r.id,
+        user_id,
+        user_heat,
+        r.score,
+        r.remark as rankingRemark,
+        r.competition_zone,
+        r.participating_photo,
+        r.entry_declaration,
+        r.ranking_type,
+        r.create_by,
+        r.create_time,
+        r.modify_by,
+        r.modify_time,
+        r.status,
+        nick_name,
+        name,
+        phone,
+        u.remark as userRemark
+        from sys_ranking as r,
+        sys_mobile_end_user as u
+        where u.id = r.user_id
+        <if test="userId != null ">and r.user_id = #{userId}</if>
+        <if test="userHeat != null ">and r.user_heat = #{userHeat}</if>
+        <if test="rankingType != null ">and r.ranking_type = #{rankingType}</if>
+        <if test="modifyBy != null  and modifyBy != ''">and r.modify_by = #{modifyBy}</if>
+        <if test="modifyTime != null ">and r.modify_time = #{modifyTime}</if>
+        <if test="status != null ">and r.status = #{status}</if>
+    </select>
+
+    <select id="selectSysRankingById" parameterType="java.lang.Long" resultMap="SysRankingResult">
+        <include refid="selectSysRankingVo"/>
+        where id = #{id}
+    </select>
+
+    <select id="findRankingByActivityMusicians" resultType="com.ruoyi.system.domain.vo.SysRankingVo">
+        select r.id,
+               r.user_id,
+               nick_name,
+               avatar,
+               r.score,
+               r.remark,
+               r.competition_zone,
+               r.participating_photo,
+               r.entry_declaration,
+               r.user_heat
+        from sys_ranking as r
+                 left join sys_mobile_end_user as u on u.id = r.user_id
+        where r.ranking_type = #{type}
+          and u.`status` = 0
+          and r.`status` = 0
+        order by r.user_heat desc limit 0,50;
+    </select>
+
+    <insert id="insertSysRanking" parameterType="com.ruoyi.system.entity.SysRanking" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into sys_ranking
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="userHeat != null">user_heat,</if>
+            <if test="score != null">score,</if>
+            <if test="remark != null">remark,</if>
+            <if test="rankingType != null">ranking_type,</if>
+            <if test="competitionZone != null">competition_zone,</if>
+            <if test="participatingPhoto != null">participating_photo,</if>
+            <if test="entryDeclaration != null">entry_declaration,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="modifyBy != null">modify_by,</if>
+            <if test="modifyTime != null">modify_time,</if>
+            <if test="status != null">status,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="userHeat != null">#{userHeat},</if>
+            <if test="score != null">#{score},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="rankingType != null">#{rankingType},</if>
+            <if test="competitionZone != null">#{competitionZone},</if>
+            <if test="participatingPhoto != null">#{participatingPhoto},</if>
+            <if test="entryDeclaration != null">#{entryDeclaration},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="modifyBy != null">#{modifyBy},</if>
+            <if test="modifyTime != null">#{modifyTime},</if>
+            <if test="status != null">#{status},</if>
+        </trim>
+    </insert>
+
+    <update id="updateSysRanking" parameterType="com.ruoyi.system.entity.SysRanking">
+        update sys_ranking
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="userHeat != null">user_heat = #{userHeat},</if>
+            <if test="score != null">score = #{score},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="competitionZone != null">competition_zone = #{competitionZone},</if>
+            <if test="participatingPhoto != null">participating_photo = #{participatingPhoto},</if>
+            <if test="entryDeclaration != null">entry_declaration = #{entryDeclaration},</if>
+            <if test="rankingType != null">ranking_type = #{rankingType},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="modifyBy != null">modify_by = #{modifyBy},</if>
+            <if test="modifyTime != null">modify_time = #{modifyTime},</if>
+            <if test="status != null">status = #{status},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <update id="modifyUserHeatByUserId" parameterType="com.ruoyi.system.domain.dto.SysRankingDto">
+        update sys_ranking
+        set user_heat = user_heat + #{userHeat}
+        where user_id = #{userId}
+    </update>
+
+    <delete id="deleteSysRankingById" parameterType="java.lang.Long">
+        delete
+        from sys_ranking
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteSysRankingByIds" parameterType="String">
+        delete from sys_ranking where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

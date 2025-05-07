@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysGoodsSpecificationsMapper">
+
+    <!-- 开启二级缓存 -->
+<!--    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ruoyi.system.entity.SysGoodsSpecifications">
+        <id column="id" property="id" />
+        <result column="goods_id" property="goodsId" />
+        <result column="specifications_title" property="specificationsTitle" />
+        <result column="price" property="price" />
+        <result column="specifications_image_url" property="specificationsImageUrl" />
+        <result column="stock" property="stock" />
+        <result column="sort" property="sort" />
+        <result column="create_by" property="createBy" />
+        <result column="create_time" property="createTime" />
+        <result column="modify_by" property="modifyBy" />
+        <result column="modify_time" property="modifyTime" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, goods_id, specifications_title, price, specifications_image_url, stock, sort, create_by, create_time, modify_by, modify_time, status
+    </sql>
+
+    <resultMap type="com.ruoyi.system.entity.SysGoodsSpecifications" id="SysGoodsSpecificationsResult">
+        <result property="id"    column="id"    />
+        <result property="goodsId"    column="goods_id"    />
+        <result property="specificationsTitle"    column="specifications_title"    />
+        <result property="price"    column="price"    />
+        <result property="specificationsImageUrl"    column="specifications_image_url"    />
+        <result property="stock"    column="stock"    />
+        <result property="parentId"    column="parent_id"    />
+        <result property="sort"    column="sort"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="modifyBy"    column="modify_by"    />
+        <result property="modifyTime"    column="modify_time"    />
+        <result property="status"    column="status"    />
+    </resultMap>
+
+    <sql id="selectSysGoodsSpecificationsVo">
+        select id, goods_id, specifications_title, price, specifications_image_url, stock, parent_id, sort, create_by, create_time, modify_by, modify_time, status from sys_goods_specifications
+    </sql>
+
+    <select id="selectSysGoodsSpecificationsList" parameterType="com.ruoyi.system.entity.SysGoodsSpecifications" resultMap="SysGoodsSpecificationsResult">
+        <include refid="selectSysGoodsSpecificationsVo"/>
+        <where>
+            <if test="goodsId != null "> and goods_id = #{goodsId}</if>
+            <if test="specificationsTitle != null  and specificationsTitle != ''"> and specifications_title = #{specificationsTitle}</if>
+            <if test="price != null "> and price = #{price}</if>
+            <if test="specificationsImageUrl != null  and specificationsImageUrl != ''"> and specifications_image_url = #{specificationsImageUrl}</if>
+            <if test="stock != null "> and stock = #{stock}</if>
+            <if test="parentId != null "> and parent_id = #{parentId}</if>
+            <if test="sort != null "> and sort = #{sort}</if>
+            <if test="modifyBy != null  and modifyBy != ''"> and modify_by = #{modifyBy}</if>
+            <if test="modifyTime != null "> and modify_time = #{modifyTime}</if>
+            <if test="status != null "> and status = #{status}</if>
+        </where>
+    </select>
+
+    <select id="selectSysGoodsSpecificationsById" parameterType="Long" resultMap="SysGoodsSpecificationsResult">
+        <include refid="selectSysGoodsSpecificationsVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertSysGoodsSpecifications" parameterType="com.ruoyi.system.entity.SysGoodsSpecifications" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_goods_specifications
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="goodsId != null">goods_id,</if>
+            <if test="specificationsTitle != null">specifications_title,</if>
+            <if test="price != null">price,</if>
+            <if test="specificationsImageUrl != null">specifications_image_url,</if>
+            <if test="stock != null">stock,</if>
+            <if test="parentId != null">parent_id,</if>
+            <if test="sort != null">sort,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="modifyBy != null">modify_by,</if>
+            <if test="modifyTime != null">modify_time,</if>
+            <if test="status != null">status,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="goodsId != null">#{goodsId},</if>
+            <if test="specificationsTitle != null">#{specificationsTitle},</if>
+            <if test="price != null">#{price},</if>
+            <if test="specificationsImageUrl != null">#{specificationsImageUrl},</if>
+            <if test="stock != null">#{stock},</if>
+            <if test="parentId != null">#{parentId},</if>
+            <if test="sort != null">#{sort},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="modifyBy != null">#{modifyBy},</if>
+            <if test="modifyTime != null">#{modifyTime},</if>
+            <if test="status != null">#{status},</if>
+        </trim>
+    </insert>
+
+    <update id="updateSysGoodsSpecifications" parameterType="com.ruoyi.system.entity.SysGoodsSpecifications">
+        update sys_goods_specifications
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="goodsId != null">goods_id = #{goodsId},</if>
+            <if test="specificationsTitle != null">specifications_title = #{specificationsTitle},</if>
+            <if test="price != null">price = #{price},</if>
+            <if test="specificationsImageUrl != null">specifications_image_url = #{specificationsImageUrl},</if>
+            <if test="stock != null">stock = #{stock},</if>
+            <if test="parentId != null">parent_id = #{parentId},</if>
+            <if test="sort != null">sort = #{sort},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="modifyBy != null">modify_by = #{modifyBy},</if>
+            <if test="modifyTime != null">modify_time = #{modifyTime},</if>
+            <if test="status != null">status = #{status},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysGoodsSpecificationsById" parameterType="Long">
+        delete from sys_goods_specifications where id = #{id}
+    </delete>
+
+    <delete id="deleteSysGoodsSpecificationsByIds" parameterType="String">
+        delete from sys_goods_specifications where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

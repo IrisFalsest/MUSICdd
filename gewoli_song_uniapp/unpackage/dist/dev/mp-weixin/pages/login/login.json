@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-checkbox-group": "/uview-ui/components/u-checkbox-group/u-checkbox-group",
+    "u-checkbox": "/uview-ui/components/u-checkbox/u-checkbox",
+    "privacy-pop": "/components/privacyPop/privacyPop",
+    "u-popup": "/uview-ui/components/u-popup/u-popup",
+    "u-field": "/uview-ui/components/u-field/u-field",
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "u-verification-code": "/uview-ui/components/u-verification-code/u-verification-code"
+  }
+}

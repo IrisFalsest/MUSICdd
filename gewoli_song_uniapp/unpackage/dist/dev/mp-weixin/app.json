@@ -1,0 +1,85 @@
+{
+  "pages": [
+    "pages/identity/identity",
+    "pages/ranking/ranking",
+    "pages/upUserInfo/upUserInfo",
+    "pages/upSong/index",
+    "pages/login/login",
+    "pages/singer/singer",
+    "pages/tabbar/index/index",
+    "pages/tabbar/shopSing/shopSing",
+    "pages/tabbar/recording/recording",
+    "pages/tabbar/goods/goods",
+    "pages/tabbar/center/index",
+    "pages/producer/producer",
+    "pages/address/myAdress",
+    "pages/address/edidAdress",
+    "pages/play/play",
+    "pages/tabbar/recording/details",
+    "pages/collection/index",
+    "pages/records/index",
+    "pages/goodDetails/goodDetails",
+    "pages/order/submit",
+    "pages/order/list",
+    "pages/order/orderDetails",
+    "pages/order/singOrderList",
+    "pages/upUserInfo/centerUpuserInfo",
+    "pages/upUserInfo/upExamine",
+    "pages/mv-play/mv-play",
+    "pages/canvas/canvas",
+    "pages/Musician/Musician",
+    "pages/details/details",
+    "pages/songBuying/songBuying",
+    "pages/agreement/agreement",
+    "pages/leaderboardDetails/leaderboardDetails"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uView",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#909399",
+    "selectedColor": "#303133",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/index/index",
+        "iconPath": "static/tabbar/tabbar_1_0.png",
+        "selectedIconPath": "static/tabbar/tabbar_1_1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabbar/shopSing/shopSing",
+        "iconPath": "static/tabbar/tabbar_2_0.png",
+        "selectedIconPath": "static/tabbar/tabbar_2_1.png",
+        "text": "歌单"
+      },
+      {
+        "pagePath": "pages/tabbar/recording/recording",
+        "iconPath": "static/tabbar/tabbar_3_0.png",
+        "selectedIconPath": "static/tabbar/tabbar_3_1.png",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/tabbar/goods/goods",
+        "iconPath": "static/tabbar/tabbar_4_0.png",
+        "selectedIconPath": "static/tabbar/tabbar_4_1.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/tabbar/center/index",
+        "iconPath": "static/tabbar/tabbar_5_0.png",
+        "selectedIconPath": "static/tabbar/tabbar_5_1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "usingComponents": {}
+}

@@ -1,0 +1,13 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ranking-u-waterfall-left": "/pages/ranking/ranking-u-waterfall-left",
+    "ranking-u-waterfall-right": "/pages/ranking/ranking-u-waterfall-right",
+    "heads": "/components/heads/heads",
+    "u-search": "/uview-ui/components/u-search/u-search",
+    "u-popup": "/uview-ui/components/u-popup/u-popup",
+    "u-input": "/uview-ui/components/u-input/u-input",
+    "u-waterfall": "/uview-ui/components/u-waterfall/u-waterfall",
+    "u-lazy-load": "/uview-ui/components/u-lazy-load/u-lazy-load"
+  }
+}

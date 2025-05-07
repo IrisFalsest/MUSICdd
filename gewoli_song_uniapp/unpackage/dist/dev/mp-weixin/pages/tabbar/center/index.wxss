@@ -1,0 +1,166 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.data-v-7a23c580 .u-tabbar__content .u-tabbar__content__circle .u-icon__img {
+  width: 82rpx !important;
+  height: 82rpx !important;
+}
+.data-v-7a23c580 .u-tabbar__content .u-icon__img {
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.data-v-7a23c580 .u-tabbar__content__circle__border {
+  top: 0 !important;
+}
+.data-v-7a23c580 .u-tabbar__content__circle__button {
+  top: 4px !important;
+}
+.content.data-v-7a23c580 {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: url("https://image-file2024.oss-cn-beijing.aliyuncs.com/geWoLiMusicMall/backgroundImage/image1.jpg");
+  background-size: 100% 100%;
+}
+.tView.data-v-7a23c580 {
+  width: 686rpx;
+  border-radius: 24rpx;
+  background: #FFFFFF;
+  padding: 32rpx;
+  margin: 0 auto;
+  box-shadow: 0 0 10rpx #f5f5f5;
+}
+.user.data-v-7a23c580 {
+  margin-top: 34rpx;
+}
+.user .uTop.data-v-7a23c580 {
+  display: flex;
+}
+.user .uTop > image.data-v-7a23c580 {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.user .uTop .utLogin.data-v-7a23c580 {
+  margin-left: 24rpx;
+}
+.user .uTop .utLogin .utlTxt.data-v-7a23c580 {
+  font-size: 24rpx;
+  font-weight: 500;
+  line-height: 48rpx;
+}
+.user .uTop .utLogin .utlTxt .icon.data-v-7a23c580 {
+  margin-left: 18rpx;
+}
+.user .uTop .utLogin .utlName.data-v-7a23c580 {
+  background: #31312D;
+  border-radius: 20rpx;
+  color: #fff;
+  width: -webkit-fit-content;
+  width: fit-content;
+  padding: 4rpx 10rpx;
+  font-size: 28rpx;
+}
+.user .uTop .utLogin .utlName image.data-v-7a23c580 {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle;
+  margin-right: 2rpx;
+}
+.user .uBot.data-v-7a23c580 {
+  margin-top: 60rpx;
+  display: flex;
+}
+.user .uBot .ubView.data-v-7a23c580 {
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+.user .uBot .ubView .ubvTop.data-v-7a23c580 {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.user .uBot .ubView .ubvBot.data-v-7a23c580 {
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 12rpx;
+}
+.user .uBot .ubView.data-v-7a23c580:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 2rpx;
+  height: 56rpx;
+  background: #DCDCDC;
+}
+.myOrder.data-v-7a23c580 {
+  margin-top: 32rpx;
+}
+.myOrder .oTop.data-v-7a23c580 {
+  display: flex;
+}
+.myOrder .oTop .otLeft.data-v-7a23c580 {
+  font-size: 28rpx;
+  font-weight: 800;
+}
+.myOrder .oTop .otRight.data-v-7a23c580 {
+  margin-left: auto;
+  font-size: 24rpx;
+  color: #333333;
+}
+.myOrder .oTop .otRight .icon.data-v-7a23c580 {
+  margin-left: 8rpx;
+}
+.myOrder .oBot.data-v-7a23c580 {
+  margin-top: 32rpx;
+  display: flex;
+}
+.myOrder .oBot .obLi.data-v-7a23c580 {
+  text-align: center;
+  font-size: 24rpx;
+  color: #333333;
+  margin: auto;
+}
+.myOrder .oBot .obLi image.data-v-7a23c580 {
+  width: 48rpx;
+  height: 48rpx;
+}
+.myView.data-v-7a23c580 {
+  margin-top: 32rpx;
+}
+.myView .myTop.data-v-7a23c580 {
+  display: flex;
+}
+.myView .myTop .mytLeft.data-v-7a23c580 {
+  font-size: 28rpx;
+  font-weight: 800;
+}
+.myView .myBot.data-v-7a23c580 {
+  margin-top: 20rpx;
+}
+.myView .myBot .myLi.data-v-7a23c580 {
+  margin-bottom: 32rpx;
+  display: flex;
+  font-size: 24rpx;
+  align-items: center;
+  justify-content: center;
+}
+.myView .myBot .myLi image.data-v-7a23c580 {
+  width: 48rpx;
+  height: 48rpx;
+}
+.myView .myBot .myLi text.data-v-7a23c580 {
+  margin-left: 16rpx;
+}
+.myView .myBot .myLi .icon.data-v-7a23c580 {
+  margin-left: auto;
+}
+.myView .myBot .myLi.data-v-7a23c580:last-child {
+  margin-bottom: 0;
+}
+

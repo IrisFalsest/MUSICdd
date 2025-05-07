@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.data-v-88bf54f4 .u-tabbar__content .u-tabbar__content__circle .u-icon__img {
+  width: 82rpx !important;
+  height: 82rpx !important;
+}
+.data-v-88bf54f4 .u-tabbar__content .u-icon__img {
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.data-v-88bf54f4 .u-tabbar__content__circle__border {
+  top: 0 !important;
+}
+.data-v-88bf54f4 .u-tabbar__content__circle__button {
+  top: 4px !important;
+}
+button.data-v-88bf54f4 {
+  font-size: 24rpx;
+  border: 0;
+  background: 0;
+  padding-left: 0;
+  padding-right: 0;
+  height: 64rpx;
+}
+button.data-v-88bf54f4::after {
+  border: 0;
+  background: 0;
+  height: 0;
+}
+.content.data-v-88bf54f4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #304f57 0%, #152328 100%);
+}
+.content .btns.data-v-88bf54f4 {
+  width: 92vw;
+  margin: 50rpx auto 0;
+  display: flex;
+  align-items: center;
+}
+image.data-v-88bf54f4 {
+  margin: auto;
+  width: 64rpx;
+  height: 64rpx;
+}
+.share.data-v-88bf54f4 {
+  width: 48rpx;
+  height: 48rpx;
+}
+.play.data-v-88bf54f4 {
+  width: 84rpx;
+  height: 84rpx;
+}
+

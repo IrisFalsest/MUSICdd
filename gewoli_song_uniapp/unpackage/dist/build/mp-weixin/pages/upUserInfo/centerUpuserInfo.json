@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "用户信息",
+  "usingComponents": {
+    "u-button": "/uview-ui/components/u-button/u-button"
+  }
+}

@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.data-v-6546c710 .u-tabbar__content .u-tabbar__content__circle .u-icon__img {
+  width: 82rpx !important;
+  height: 82rpx !important;
+}
+.data-v-6546c710 .u-tabbar__content .u-icon__img {
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.data-v-6546c710 .u-tabbar__content__circle__border {
+  top: 0 !important;
+}
+.data-v-6546c710 .u-tabbar__content__circle__button {
+  top: 4px !important;
+}
+page.data-v-6546c710 {
+  text-align: center;
+  background-color: #F7F8FA;
+}
+.content.data-v-6546c710 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.me-head.data-v-6546c710 {
+  width: 100%;
+  height: 80rpx;
+  padding-bottom: 20rpx;
+}
+.me-center.data-v-6546c710 {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+  margin-top: 20rpx;
+}
+.me-center .pullScrollView.data-v-6546c710 {
+  display: flex;
+  flex-direction: column;
+}
+.me-center .list-tab.data-v-6546c710 {
+  width: 93%;
+  margin: 0 auto;
+}
+.me-center .list-tab .item-ul.data-v-6546c710 {
+  margin-bottom: 20rpx;
+}
+.me-center .list-tab .item-ul ._li.data-v-6546c710 {
+  background-color: #ffffff;
+  border-radius: 15rpx;
+  box-shadow: 0 0rpx 6rpx 0rpx rgba(0, 0, 150, 0.2);
+}
+.me-center .list-tab .item-top.data-v-6546c710 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+.me-center .list-tab .item-top .oId.data-v-6546c710 {
+  font-size: 20rpx;
+}
+.me-center .list-tab .item-top .pay-type.data-v-6546c710 {
+  font-weight: bold;
+}
+.me-center .list-tab .item-top .status-red.data-v-6546c710 {
+  color: #ff5500;
+}
+.me-center .list-tab .item-top .status-2.data-v-6546c710 {
+  color: #4891d9;
+}
+.me-center .list-tab .item-top .status-green.data-v-6546c710 {
+  color: #00d500;
+}
+.me-center .list-tab .item-content.data-v-6546c710 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 20rpx;
+}
+.me-center .list-tab .item-right.data-v-6546c710 {
+  flex: 1;
+  margin-left: 20rpx;
+}
+.me-center .list-tab .item-right .item-right-v1.data-v-6546c710 {
+  width: 100%;
+  padding: 8rpx 0;
+}
+.me-center .list-tab .item-right .item-right-v1 .item-title.data-v-6546c710 {
+  font-weight: bold;
+  display: -webkit-box;
+}
+.me-center .list-tab .item-right .induce.data-v-6546c710 {
+  display: flex;
+  align-items: center;
+}
+.me-center .list-tab .item-right .induce .rate-text1.data-v-6546c710 {
+  font-size: 26rpx;
+}
+.me-center .list-tab .item-right .induce .rate-text2.data-v-6546c710 {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  color: #B9B9B9;
+}
+.me-center .list-tab .item-right .item-right-v2.data-v-6546c710 {
+  padding: 8rpx 0;
+  display: flex;
+  justify-content: space-between;
+  color: #a3a3a3;
+  font-size: 26rpx;
+}
+.me-center .list-tab .item-right .item-right-v2 .v2-fh.data-v-6546c710 {
+  color: #ff5500;
+  font-size: 22rpx;
+}
+.me-center .list-tab .item-right .item-right-v2 .v2-price.data-v-6546c710 {
+  color: #ff5500;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.me-center .list-tab .item-btom.data-v-6546c710 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20rpx 10rpx;
+  font-size: 28rpx;
+}
+.me-center .list-tab .item-btom .item-btom-btn.data-v-6546c710 {
+  padding: 6rpx 40rpx;
+  border: 1px solid #d2d3d4;
+  border-radius: 40rpx;
+  margin-right: 20rpx;
+  align-items: center;
+}
+.me-center .list-tab .item-btom .pay.data-v-6546c710 {
+  background-color: #ce7e78;
+  border: 1px solid #ce7e78;
+  color: #ffffff;
+}
+

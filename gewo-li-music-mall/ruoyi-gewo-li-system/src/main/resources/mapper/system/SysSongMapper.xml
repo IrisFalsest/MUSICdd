@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysSongMapper">
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap type="com.ruoyi.system.entity.SysSong" id="SysSongResult">
+        <result property="id" column="id"/>
+        <result property="songTitle" column="song_title"/>
+        <result property="songName" column="song_name"/>
+        <result property="album" column="album"/>
+        <result property="songTypeId" column="song_type_id"/>
+        <result property="duration" column="duration"/>
+        <result property="songFileUrl" column="song_file_url"/>
+        <result property="songCoverPhotoUrl" column="song_cover_photo_url"/>
+        <result property="songMvCoverPhotoUrl" column="song_mv_cover_photo_url"/>
+        <result property="songMvUrl" column="song_mv_url"/>
+        <result property="songLyrics" column="song_lyrics"/>
+        <result property="originalPrice" column="original_price"/>
+        <result property="currentPrice" column="current_price"/>
+        <result property="songHeat" column="song_heat"/>
+        <result property="isScoreBuy" column="is_score_buy"/>
+        <result property="scoreSum" column="score_sum"/>
+        <result property="isGiftScore" column="is_gift_score"/>
+        <result property="giftScore" column="gift_score"/>
+        <result property="userId" column="user_id"/>
+        <result property="composer" column="composer"/>
+        <result property="lyricist" column="lyricist"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifyBy" column="modify_by"/>
+        <result property="modifyTime" column="modify_time"/>
+        <result property="status" column="status"/>
+        <result property="reviewStatus" column="review_status"/>
+        <result property="source" column="source"/>
+        <result property="singType" column="sing_type"/>
+    </resultMap>
+
+    <sql id="selectSysSongVo">
+        select id,
+               song_title,
+               song_name,
+               album,
+               song_type_id,
+               duration,
+               song_file_url,
+               song_cover_photo_url,
+               song_mv_cover_photo_url,
+               song_mv_url,
+               song_lyrics,
+               original_price,
+               current_price,
+               song_heat,
+               is_score_buy,
+               score_sum,
+               is_gift_score,
+               gift_score,
+               create_by,
+               create_time,
+               modify_by,
+               modify_time,
+               status,
+               review_status,
+               sing_type,
+               user_id,
+               composer,
+               lyricist
+        from sys_song
+    </sql>
+
+    <select id="selectSysSongList" parameterType="com.ruoyi.system.entity.SysSong" resultMap="SysSongResult">
+        <include refid="selectSysSongVo"/>
+        <where>
+            <if test="songTitle != null  and songTitle != ''">and song_title = #{songTitle}</if>
+            <if test="songName != null  and songName != ''">and song_name like concat('%', #{songName}, '%')</if>
+            <if test="album != null  and album != ''">and album = #{album}</if>
+            <if test="songTypeId != null ">and song_type_id = #{songTypeId}</if>
+            <if test="duration != null ">and duration = #{duration}</if>
+            <if test="songFileUrl != null  and songFileUrl != ''">and song_file_url = #{songFileUrl}</if>
+            <if test="songCoverPhotoUrl != null  and songCoverPhotoUrl != ''">and song_cover_photo_url =
+                #{songCoverPhotoUrl}
+            </if>
+            <if test="songMvCoverPhotoUrl != null  and songMvCoverPhotoUrl != ''">and song_mv_cover_photo_url =
+                #{songMvCoverPhotoUrl}
+            </if>
+            <if test="songMvUrl != null  and songMvUrl != ''">and song_mv_url = #{songMvUrl}</if>
+            <if test="songLyrics != null  and songLyrics != ''">and song_lyrics = #{songLyrics}</if>
+            <if test="originalPrice != null ">and original_price = #{originalPrice}</if>
+            <if test="currentPrice != null ">and current_price = #{currentPrice}</if>
+            <if test="songHeat != null ">and song_heat = #{songHeat}</if>
+            <if test="isScoreBuy != null ">and is_score_buy = #{isScoreBuy}</if>
+            <if test="scoreSum != null ">and score_sum = #{scoreSum}</if>
+            <if test="isGiftScore != null ">and is_gift_score = #{isGiftScore}</if>
+            <if test="giftScore != null ">and gift_score = #{giftScore}</if>
+            <if test="createBy != null  and createBy != ''">and create_by = #{createBy}</if>
+            <if test="createTime != null ">and create_time = #{createTime}</if>
+            <if test="modifyBy != null  and modifyBy != ''">and modify_by = #{modifyBy}</if>
+            <if test="modifyTime != null ">and modify_time = #{modifyTime}</if>
+            <if test="status != null ">and status = #{status}</if>
+            <if test="reviewStatus != null ">and review_status = #{reviewStatus}</if>
+            <if test="singType != null ">and sing_type = #{singType}</if>
+            <if test="userId != null ">and user_id = #{userId}</if>
+        </where>
+    </select>
+
+    <select id="selectSysSongById" parameterType="Long" resultMap="SysSongResult">
+        <include refid="selectSysSongVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertSysSong" parameterType="com.ruoyi.system.entity.SysSong" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_song
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="songTitle != null">song_title,</if>
+            <if test="songName != null">song_name,</if>
+            <if test="album != null">album,</if>
+            <if test="songTypeId != null">song_type_id,</if>
+            <if test="duration != null">duration,</if>
+            <if test="songFileUrl != null">song_file_url,</if>
+            <if test="songCoverPhotoUrl != null">song_cover_photo_url,</if>
+            <if test="songMvCoverPhotoUrl != null">song_mv_cover_photo_url,</if>
+            <if test="songMvUrl != null">song_mv_url,</if>
+            <if test="songLyrics != null">song_lyrics,</if>
+            <if test="originalPrice != null">original_price,</if>
+            <if test="currentPrice != null">current_price,</if>
+            <if test="songHeat != null">song_heat,</if>
+            <if test="isScoreBuy != null">is_score_buy,</if>
+            <if test="scoreSum != null">score_sum,</if>
+            <if test="isGiftScore != null">is_gift_score,</if>
+            <if test="giftScore != null">gift_score,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="modifyBy != null">modify_by,</if>
+            <if test="modifyTime != null">modify_time,</if>
+            <if test="status != null">status,</if>
+            <if test="reviewStatus != null">review_status,</if>
+            <if test="source != null">source,</if>
+            <if test="singType != null">sing_type,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="composer != null">composer,</if>
+            <if test="lyricist != null">lyricist,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="songTitle != null">#{songTitle},</if>
+            <if test="songName != null">#{songName},</if>
+            <if test="album != null">#{album},</if>
+            <if test="songTypeId != null">#{songTypeId},</if>
+            <if test="duration != null">#{duration},</if>
+            <if test="songFileUrl != null">#{songFileUrl},</if>
+            <if test="songCoverPhotoUrl != null">#{songCoverPhotoUrl},</if>
+            <if test="songMvCoverPhotoUrl != null">#{songMvCoverPhotoUrl},</if>
+            <if test="songMvUrl != null">#{songMvUrl},</if>
+            <if test="songLyrics != null">#{songLyrics},</if>
+            <if test="originalPrice != null">#{originalPrice},</if>
+            <if test="currentPrice != null">#{currentPrice},</if>
+            <if test="songHeat != null">#{songHeat},</if>
+            <if test="isScoreBuy != null">#{isScoreBuy},</if>
+            <if test="scoreSum != null">#{scoreSum},</if>
+            <if test="isGiftScore != null">#{isGiftScore},</if>
+            <if test="giftScore != null">#{giftScore},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="modifyBy != null">#{modifyBy},</if>
+            <if test="modifyTime != null">#{modifyTime},</if>
+            <if test="status != null">#{status},</if>
+            <if test="reviewStatus != null">#{reviewStatus},</if>
+            <if test="source != null">#{source},</if>
+            <if test="singType != null">#{singType},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="composer != null">#{composer},</if>
+            <if test="lyricist != null">#{lyricist},</if>
+        </trim>
+    </insert>
+
+    <update id="updateSysSong" parameterType="com.ruoyi.system.entity.SysSong">
+        update sys_song
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="songTitle != null">song_title = #{songTitle},</if>
+            <if test="songName != null">song_name = #{songName},</if>
+            <if test="album != null">album = #{album},</if>
+            <if test="songTypeId != null">song_type_id = #{songTypeId},</if>
+            <if test="duration != null">duration = #{duration},</if>
+            <if test="songFileUrl != null">song_file_url = #{songFileUrl},</if>
+            <if test="songCoverPhotoUrl != null">song_cover_photo_url = #{songCoverPhotoUrl},</if>
+            <if test="songMvCoverPhotoUrl != null">song_mv_cover_photo_url = #{songMvCoverPhotoUrl},</if>
+            <if test="songMvUrl != null">song_mv_url = #{songMvUrl},</if>
+            <if test="songLyrics != null">song_lyrics = #{songLyrics},</if>
+            <if test="originalPrice != null">original_price = #{originalPrice},</if>
+            <if test="currentPrice != null">current_price = #{currentPrice},</if>
+            <if test="songHeat != null">song_heat = #{songHeat},</if>
+            <if test="isScoreBuy != null">is_score_buy = #{isScoreBuy},</if>
+            <if test="scoreSum != null">score_sum = #{scoreSum},</if>
+            <if test="isGiftScore != null">is_gift_score = #{isGiftScore},</if>
+            <if test="giftScore != null">gift_score = #{giftScore},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="modifyBy != null">modify_by = #{modifyBy},</if>
+            <if test="modifyTime != null">modify_time = #{modifyTime},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="reviewStatus != null">review_status = #{reviewStatus},</if>
+            <if test="source != null">source = #{source},</if>
+            <if test="singType != null">sing_type = #{singType},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="composer != null">composer = #{composer},</if>
+            <if test="lyricist != null">lyricist = #{lyricist},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysSongById" parameterType="Long">
+        delete
+        from sys_song
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteSysSongByIds" parameterType="String">
+        delete from sys_song where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="findSongRanking" resultType="com.ruoyi.system.entity.SysSong">
+        select s.id,
+        s.song_title,
+        s.song_name,
+        s.album,
+        s.song_type_id,
+        s.duration,
+        s.song_file_url,
+        s.song_cover_photo_url,
+        s.song_mv_cover_photo_url,
+        s.song_mv_url,
+        s.song_lyrics,
+        s.original_price,
+        s.current_price,
+        s.song_heat,
+        s.is_score_buy,
+        s.score_sum,
+        s.is_gift_score,
+        s.gift_score,
+        s.user_id,
+        s.composer,
+        s.lyricist,
+        s.create_by,
+        s.create_time,
+        s.modify_by,
+        s.modify_time,
+        s.STATUS,
+        s.review_status,
+        s.source,
+        s.sing_type,
+        u.avatar,
+        t.type_name as typeName,
+        CASE
+        WHEN c.id IS NOT NULL THEN
+        '1' ELSE '0'
+        END AS is_collect,
+        CASE
+        WHEN o.id IS NOT NULL THEN
+        '1' ELSE '0'
+        END AS is_buy,
+        CASE WHEN f.id IS NOT NULL THEN
+        '1' ELSE '0'
+        END AS is_follow
+        from sys_song s
+        LEFT JOIN sys_song_type t on s.song_type_id = t.id
+        LEFT JOIN sys_user_song_collection c ON s.id = c.song_id
+        AND c.user_id = #{songListDto.userId}
+        LEFT JOIN sys_follow f ON s.user_id = f.follow_users
+        LEFT JOIN sys_mobile_end_user u ON s.user_id = u.id
+        LEFT JOIN sys_song_order o ON s.id = o.song_id and o.user_id = #{songListDto.userId} and o.pay_status = 1
+        where 1 = 1
+        and s.status = 0 and s.review_status = 2
+        <if test="songListDto.songId != null">
+            and c.song_id = #{songListDto.songId}
+        </if>
+        <if test="songListDto.songType != null and songListDto.songType > 0">
+            and s.song_type_id = #{songListDto.songType}
+        </if>
+        <if test="type != null and type == 3">
+            and DATEDIFF(s.create_time,NOW()) &lt;= 30
+            and s.source = 1
+            order by s.create_time desc limit 0,50
+        </if>
+        <if test="type != null and type == 2">
+            and s.source = 1
+            order by s.song_heat desc limit 0,50
+        </if>
+        <if test="type != null and type == 1">
+            and s.source = 0
+            order by s.create_time desc limit 0,50
+        </if>
+    </select>
+
+    <select id="findSongBySongType" resultType="com.ruoyi.system.entity.SysSong">
+        SELECT
+        s.id,
+        s.song_title,
+        s.song_name,
+        s.album,
+        s.song_type_id,
+        s.duration,
+        s.song_file_url,
+        s.song_cover_photo_url,
+        s.song_mv_cover_photo_url,
+        s.song_mv_url,
+        s.song_lyrics,
+        s.original_price,
+        s.current_price,
+        s.song_heat,
+        s.is_score_buy,
+        s.score_sum,
+        s.is_gift_score,
+        s.gift_score,
+        s.user_id,
+        s.composer,
+        s.lyricist,
+        s.create_by,
+        s.create_time,
+        s.modify_by,
+        s.modify_time,
+        s.STATUS,
+        s.review_status,
+        s.source,
+        s.sing_type,
+        u.avatar,
+        t.type_name as typeName,
+        CASE
+        WHEN c.id IS NOT NULL THEN
+        '1' ELSE '0'
+        END AS is_collect,
+        CASE
+        WHEN o.id IS NOT NULL THEN
+        '1' ELSE '0'
+        END AS is_buy,
+        CASE WHEN f.id IS NOT NULL THEN
+        '1' ELSE '0'
+        END AS is_follow
+        FROM
+        sys_song s
+        LEFT JOIN sys_song_type t on s.song_type_id = t.id
+        LEFT JOIN sys_user_song_collection c ON s.id = c.song_id
+        AND c.user_id = #{userId}
+        LEFT JOIN sys_follow f ON s.user_id = f.follow_users
+        LEFT JOIN sys_mobile_end_user u ON s.user_id = u.id
+        LEFT JOIN sys_song_order o ON s.id = o.song_id and o.user_id = #{userId} and o.pay_status = 1
+        WHERE 1=1
+        and s.review_status = 2 and s.status = 0
+        <if test="songType != null and songType > 0">
+            and s.song_type_id = #{songType}
+        </if>
+        ORDER BY
+        s.create_time DESC
+    </select>
+
+    <select id="searchSongBySongNameOrProducer" resultType="com.ruoyi.system.entity.SysSong">
+        SELECT
+        s.id,
+        s.song_title,
+        s.song_name,
+        s.album,
+        s.song_type_id,
+        s.duration,
+        s.song_file_url,
+        s.song_cover_photo_url,
+        s.song_mv_cover_photo_url,
+        s.song_mv_url,
+        s.song_lyrics,
+        s.original_price,
+        s.current_price,
+        s.song_heat,
+        s.is_score_buy,
+        s.score_sum,
+        s.is_gift_score,
+        s.gift_score,
+        s.user_id,
+        s.composer,
+        s.lyricist,
+        s.create_by,
+        s.create_time,
+        s.modify_by,
+        s.modify_time,
+        s.STATUS,
+        s.review_status,
+        s.source,
+        s.sing_type,
+        u.avatar,
+        t.type_name as typeName,
+        CASE
+        WHEN c.id IS NOT NULL THEN
+        '1' ELSE '0'
+        END AS is_collect,
+        CASE
+        WHEN o.id IS NOT NULL THEN
+        '1' ELSE '0'
+        END AS is_buy,
+        CASE WHEN f.id IS NOT NULL THEN
+        '1' ELSE '0'
+        END AS is_follow
+        FROM
+        sys_song s
+        LEFT JOIN sys_song_type t on s.song_type_id = t.id
+        LEFT JOIN sys_user_song_collection c ON s.id = c.song_id
+        AND c.user_id = #{userId}
+        left join sys_mobile_end_user as u on u.id = s.user_id
+        LEFT JOIN sys_follow f ON s.user_id = f.follow_users
+        LEFT JOIN sys_song_order o ON s.id = o.song_id and o.user_id = #{userId} and o.pay_status = 1
+        WHERE s.review_status = 2 and s.status = 0
+        <if test="null != songNameOrProducer and '' != songNameOrProducer">
+            and (s.song_name like concat('%',#{songNameOrProducer},'%')
+            or s.create_by like concat('%',#{songNameOrProducer},'%')
+            or u.nick_name like concat('%',#{songNameOrProducer},'%'))
+        </if>
+        order by s.create_time desc
+    </select>
+
+</mapper>

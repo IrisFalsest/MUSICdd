@@ -1,0 +1,205 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+ .u-tabbar__content .u-tabbar__content__circle .u-icon__img {
+  width: 82rpx !important;
+  height: 82rpx !important;
+}
+ .u-tabbar__content .u-icon__img {
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+ .u-tabbar__content__circle__border {
+  top: 0 !important;
+}
+ .u-tabbar__content__circle__button {
+  top: 4px !important;
+}
+page {
+  background-color: #f7f7f7;
+}
+.page-order-det {
+  position: relative;
+}
+.page-order-det .top {
+  width: 100%;
+  height: 548rpx;
+  margin-top: -44px;
+  background: linear-gradient(180deg, #ff5500 80%, #f7f7f7 100%);
+}
+.page-order-det .body {
+  position: absolute;
+  top: 150rpx;
+  width: 100%;
+  padding-bottom: 140rpx;
+}
+.page-order-det .body .status {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 64rpx);
+  margin: 0 32rpx 50rpx 32rpx;
+  padding: 52rpx 30rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 8rpx;
+}
+.page-order-det .body .status .s-img {
+  display: block;
+  width: 58rpx;
+  height: 58rpx;
+  margin-right: 24rpx;
+}
+.page-order-det .body .status .status-name {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #565656;
+}
+.page-order-det .body .status .tips {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #ababab;
+}
+.page-order-det .body .goods-info {
+  width: calc(100% - 64rpx);
+  margin: 0 32rpx 20rpx 32rpx;
+  padding: 52rpx 30rpx 36rpx 30rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 8rpx;
+}
+.page-order-det .body .goods-info .title {
+  padding-bottom: 20rpx;
+  border-bottom: solid 2rpx #e8e8e8;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333333;
+}
+.page-order-det .body .goods-info .list {
+  margin-bottom: 36rpx;
+  border-bottom: solid 2rpx #e8e8e8;
+}
+.page-order-det .body .goods-info .list .item {
+  display: flex;
+  position: relative;
+  padding: 30rpx 0;
+}
+.page-order-det .body .goods-info .list .item .preview {
+  display: block;
+  width: 188rpx;
+  height: 188rpx;
+  margin-right: 20rpx;
+}
+.page-order-det .body .goods-info .list .item .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.page-order-det .body .goods-info .list .item .main .info .name {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: #333333;
+}
+.page-order-det .body .goods-info .list .item .main .info .size {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #8e8e8e;
+}
+.page-order-det .body .goods-info .list .item .main .price {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #343434;
+}
+.page-order-det .body .goods-info .list .item .buy-num {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #8e8e8e;
+}
+.page-order-det .body .goods-info .discount {
+  display: flex;
+  align-items: center;
+  margin-bottom: 38rpx;
+}
+.page-order-det .body .goods-info .discount .name {
+  flex: 1;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #333333;
+}
+.page-order-det .body .goods-info .discount .price {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: red;
+}
+.page-order-det .body .order-info {
+  width: calc(100% - 64rpx);
+  margin: 0 32rpx 20rpx 32rpx;
+  padding: 52rpx 30rpx 1rpx 30rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 8rpx;
+}
+.page-order-det .body .order-info .title {
+  margin-bottom: 36rpx;
+  padding-bottom: 20rpx;
+  border-bottom: solid 2rpx #e8e8e8;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333333;
+}
+.page-order-det .body .order-info .list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.page-order-det .body .order-info .list .item .label {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #333333;
+}
+.page-order-det .body .order-info .list .item .value {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #8e8e8e;
+}
+.page-order-det .body .order-pay {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: calc(1rpx + env(safe-area-inset-bottom));
+  width: 100%;
+  height: 50px;
+  padding: 0 32rpx;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+.page-order-det .body .order-pay .total {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.page-order-det .body .order-pay .total .name {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #333333;
+}
+.page-order-det .body .order-pay .total .price {
+  font-size: 30rpx;
+  color: red;
+  font-weight: bold;
+}
+.page-order-det .body .order-pay .btn {
+  display: flex;
+}
+.page-order-det .body .order-pay .btn .cancel {
+  margin-right: 16rpx;
+}
+

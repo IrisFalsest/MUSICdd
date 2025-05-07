@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "收藏列表",
+  "usingComponents": {
+    "u-tabs": "/uview-ui/components/u-tabs/u-tabs"
+  }
+}

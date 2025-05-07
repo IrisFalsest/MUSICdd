@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysActivityMapper">
+    <resultMap type="com.ruoyi.system.entity.SysActivity" id="SysActivityResult">
+        <result property="id"    column="id"    />
+        <result property="activityName"    column="activity_name"    />
+        <result property="endTime"    column="end_time"    />
+        <result property="peopleCount"    column="people_count"    />
+        <result property="activityDescription"    column="activity_description"    />
+        <result property="popularity"    column="popularity"    />
+        <result property="activityVisits"    column="activity_visits"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="modifyBy"    column="modify_by"    />
+        <result property="modifyTime"    column="modify_time"    />
+        <result property="status"    column="status"    />
+    </resultMap>
+
+    <sql id="selectSysActivityVo">
+        select id, activity_name, end_time, people_count, activity_description, popularity, activity_visits, create_by, create_time, modify_by, modify_time, status from sys_activity
+    </sql>
+
+    <select id="selectSysActivityList" parameterType="com.ruoyi.system.entity.SysActivity" resultMap="SysActivityResult">
+        <include refid="selectSysActivityVo"/>
+        <where>
+            <if test="activityName != null  and activityName != ''"> and activity_name like concat('%', #{activityName}, '%')</if>
+            <if test="endTime != null "> and end_time = #{endTime}</if>
+            <if test="peopleCount != null "> and people_count = #{peopleCount}</if>
+            <if test="activityDescription != null  and activityDescription != ''"> and activity_description = #{activityDescription}</if>
+            <if test="popularity != null  and popularity != ''"> and popularity = #{popularity}</if>
+            <if test="activityVisits != null "> and activity_visits = #{activityVisits}</if>
+            <if test="modifyBy != null  and modifyBy != ''"> and modify_by = #{modifyBy}</if>
+            <if test="modifyTime != null "> and modify_time = #{modifyTime}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+        </where>
+    </select>
+
+    <select id="selectSysActivityById" parameterType="Long" resultMap="SysActivityResult">
+        <include refid="selectSysActivityVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertSysActivity" parameterType="com.ruoyi.system.entity.SysActivity" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_activity
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="activityName != null">activity_name,</if>
+            <if test="endTime != null">end_time,</if>
+            <if test="peopleCount != null">people_count,</if>
+            <if test="activityDescription != null">activity_description,</if>
+            <if test="popularity != null">popularity,</if>
+            <if test="activityVisits != null">activity_visits,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="modifyBy != null">modify_by,</if>
+            <if test="modifyTime != null">modify_time,</if>
+            <if test="status != null">status,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="activityName != null">#{activityName},</if>
+            <if test="endTime != null">#{endTime},</if>
+            <if test="peopleCount != null">#{peopleCount},</if>
+            <if test="activityDescription != null">#{activityDescription},</if>
+            <if test="popularity != null">#{popularity},</if>
+            <if test="activityVisits != null">#{activityVisits},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="modifyBy != null">#{modifyBy},</if>
+            <if test="modifyTime != null">#{modifyTime},</if>
+            <if test="status != null">#{status},</if>
+        </trim>
+    </insert>
+
+    <update id="updateSysActivity" parameterType="com.ruoyi.system.entity.SysActivity">
+        update sys_activity
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="activityName != null">activity_name = #{activityName},</if>
+            <if test="endTime != null">end_time = #{endTime},</if>
+            <if test="peopleCount != null">people_count = #{peopleCount},</if>
+            <if test="activityDescription != null">activity_description = #{activityDescription},</if>
+            <if test="popularity != null">popularity = #{popularity},</if>
+            <if test="activityVisits != null">activity_visits = #{activityVisits},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="modifyBy != null">modify_by = #{modifyBy},</if>
+            <if test="modifyTime != null">modify_time = #{modifyTime},</if>
+            <if test="status != null">status = #{status},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysActivityById" parameterType="Long">
+        delete from sys_activity where id = #{id}
+    </delete>
+
+    <delete id="deleteSysActivityByIds" parameterType="String">
+        delete from sys_activity where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

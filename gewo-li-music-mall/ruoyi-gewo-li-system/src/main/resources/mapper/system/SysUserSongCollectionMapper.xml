@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysUserSongCollectionMapper">
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ruoyi.system.entity.SysUserSongCollection">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="song_id" property="songId"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="modify_by" property="modifyBy"/>
+        <result column="modify_time" property="modifyTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id
+        , user_id, song_id, create_by, create_time, modify_by, modify_time
+    </sql>
+
+    <select id="acquisitionUserSongCollectionListByUserId" resultType="com.ruoyi.system.domain.vo.SysSongVo"
+            parameterType="java.lang.Long">
+        select c.id,
+               song_id,
+               song_name,
+               duration,
+               song_cover_photo_url,
+               song_file_url,
+               song_lyrics,
+               original_price,
+               current_price,
+               u.nick_name as createUser
+        from sys_user_song_collection as c
+                 left join sys_song as s on s.id = c.song_id
+                 left join sys_mobile_end_user as u on u.id = s.create_by
+        where c.user_id = #{userId}
+        order by c.create_time desc
+    </select>
+
+</mapper>

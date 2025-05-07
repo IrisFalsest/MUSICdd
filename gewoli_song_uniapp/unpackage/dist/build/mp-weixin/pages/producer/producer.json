@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "heads": "/components/heads/heads",
+    "u-search": "/uview-ui/components/u-search/u-search",
+    "t-tabs": "/components/tTabs/tTabs"
+  }
+}

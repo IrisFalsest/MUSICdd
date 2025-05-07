@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysGoodsOrderMapper">
+
+    <resultMap type="com.ruoyi.system.entity.SysGoodsOrder" id="SysGoodsOrderResult">
+        <result property="id" column="id"/>
+        <result property="number" column="number"/>
+        <result property="logisticsNo" column="logistics_no"/>
+        <result property="status" column="status"/>
+        <result property="userId" column="user_id"/>
+        <result property="goodsId" column="goods_id"/>
+        <result property="goodsSpecificationsId" column="goods_specifications_id"/>
+        <result property="buyQuantity" column="buy_quantity"/>
+        <result property="orderTime" column="order_time"/>
+        <result property="checkoutTime" column="checkout_time"/>
+        <result property="payMethod" column="pay_method"/>
+        <result property="payStatus" column="pay_status"/>
+        <result property="amount" column="amount"/>
+        <result property="remark" column="remark"/>
+        <result property="username" column="username"/>
+        <result property="phone" column="phone"/>
+        <result property="address" column="address"/>
+        <result property="consignee" column="consignee"/>
+        <result property="cancelReason" column="cancel_reason"/>
+        <result property="rejectionReason" column="rejection_reason"/>
+        <result property="cancelTime" column="cancel_time"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifyBy" column="modify_by"/>
+        <result property="modifyTime" column="modify_time"/>
+    </resultMap>
+
+    <resultMap type="com.ruoyi.system.domain.vo.GoodsOrderVo" id="goodsOrderResult">
+        <result property="id" column="id"/>
+        <result property="number" column="number"/>
+        <result property="logisticsNo" column="logistics_no"/>
+        <result property="status" column="status"/>
+        <result property="userId" column="user_id"/>
+        <result property="goodsId" column="goods_id"/>
+        <result property="goodsName" column="goods_name"/>
+        <result property="goodsImageUrl" column="goods_image_url"/>
+        <result property="goodsSpecificationsId" column="goods_specifications_id"/>
+        <result property="buyQuantity" column="buy_quantity"/>
+        <result property="orderTime" column="order_time"/>
+        <result property="checkoutTime" column="checkout_time"/>
+        <result property="payMethod" column="pay_method"/>
+        <result property="payStatus" column="pay_status"/>
+        <result property="amount" column="amount"/>
+        <result property="remark" column="remark"/>
+        <result property="username" column="username"/>
+        <result property="phone" column="phone"/>
+        <result property="address" column="address"/>
+        <result property="consignee" column="consignee"/>
+        <result property="cancelReason" column="cancel_reason"/>
+        <result property="rejectionReason" column="rejection_reason"/>
+        <result property="cancelTime" column="cancel_time"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifyBy" column="modify_by"/>
+        <result property="modifyTime" column="modify_time"/>
+    </resultMap>
+
+    <sql id="selectSysGoodsOrderVo">
+        select id,
+               number,
+               logistics_no,
+               status,
+               user_id,
+               goods_id,
+               goods_specifications_id,
+               buy_quantity,
+               order_time,
+               checkout_time,
+               pay_method,
+               pay_status,
+               amount,
+               remark,
+               username,
+               phone,
+               address,
+               consignee,
+               cancel_reason,
+               rejection_reason,
+               cancel_time,
+               create_by,
+               create_time,
+               modify_by,
+               modify_time
+        from sys_goods_order
+    </sql>
+
+    <sql id="selectGoodsOrderVo">
+        select o.*,g.goods_type_id,g.goods_name,g.goods_image_url,g.goods_chart,g.goods_info,g.goods_detail,g.goods_original_price, g.goods_current_price, g.goods_heat, g.`status`, g.review_status
+        from sys_goods_order as o,
+             sys_goods as g
+        where o.goods_id = g.id
+    </sql>
+
+    <select id="selectSysGoodsOrderList" parameterType="com.ruoyi.system.entity.SysSongOrder" resultType="com.ruoyi.system.domain.vo.GoodsOrderVo">
+        <include refid="selectGoodsOrderVo"/>
+        <if test="number != null  and number != ''">and number = #{number}</if>
+        <if test="logisticsNo != null  and logisticsNo != ''">and logistics_no = #{logisticsNo}</if>
+        <if test="status != null ">and o.status = #{status}</if>
+        <if test="userId != null ">and o.user_id = #{userId}</if>
+        <if test="goodsId != null ">and goods_id = #{goodsId}</if>
+        <if test="goodsSpecificationsId != null ">and goods_specifications_id = #{goodsSpecificationsId}</if>
+        <if test="buyQuantity != null ">and buy_quantity = #{buyQuantity}</if>
+        <if test="orderTime != null ">and order_time = #{orderTime}</if>
+        <if test="checkoutTime != null ">and checkout_time = #{checkoutTime}</if>
+        <if test="payMethod != null ">and pay_method = #{payMethod}</if>
+        <if test="payStatus != null ">and pay_status = #{payStatus}</if>
+        <if test="amount != null ">and o.amount = #{amount}</if>
+        <if test="username != null  and username != ''">and username like concat('%', #{username}, '%')</if>
+        <if test="phone != null  and phone != ''">and o.phone = #{phone}</if>
+        <if test="address != null  and address != ''">and address = #{address}</if>
+        <if test="consignee != null  and consignee != ''">and consignee = #{consignee}</if>
+        <if test="cancelReason != null  and cancelReason != ''">and cancel_reason = #{cancelReason}</if>
+        <if test="rejectionReason != null  and rejectionReason != ''">and rejection_reason = #{rejectionReason}</if>
+        <if test="cancelTime != null ">and cancel_time = #{cancelTime}</if>
+        <if test="modifyBy != null  and modifyBy != ''">and o.modify_by = #{modifyBy}</if>
+        <if test="modifyTime != null ">and o.modify_time = #{modifyTime}</if>
+    </select>
+
+    <select id="selectSysGoodsOrderById" parameterType="String" resultMap="SysGoodsOrderResult">
+        <include refid="selectSysGoodsOrderVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertSysGoodsOrder" parameterType="com.ruoyi.system.entity.SysGoodsOrder">
+        insert into sys_goods_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="number != null">number,</if>
+            <if test="logisticsNo != null">logistics_no,</if>
+            <if test="status != null">status,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="goodsId != null">goods_id,</if>
+            <if test="goodsSpecificationsId != null">goods_specifications_id,</if>
+            <if test="buyQuantity != null">buy_quantity,</if>
+            <if test="orderTime != null">order_time,</if>
+            <if test="checkoutTime != null">checkout_time,</if>
+            <if test="payMethod != null">pay_method,</if>
+            <if test="payStatus != null">pay_status,</if>
+            <if test="amount != null">amount,</if>
+            <if test="remark != null">remark,</if>
+            <if test="username != null">username,</if>
+            <if test="phone != null">phone,</if>
+            <if test="address != null">address,</if>
+            <if test="consignee != null">consignee,</if>
+            <if test="cancelReason != null">cancel_reason,</if>
+            <if test="rejectionReason != null">rejection_reason,</if>
+            <if test="cancelTime != null">cancel_time,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="modifyBy != null">modify_by,</if>
+            <if test="modifyTime != null">modify_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="number != null">#{number},</if>
+            <if test="logisticsNo != null">#{logisticsNo},</if>
+            <if test="status != null">#{status},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="goodsId != null">#{goodsId},</if>
+            <if test="goodsSpecificationsId != null">#{goodsSpecificationsId},</if>
+            <if test="buyQuantity != null">#{buyQuantity},</if>
+            <if test="orderTime != null">#{orderTime},</if>
+            <if test="checkoutTime != null">#{checkoutTime},</if>
+            <if test="payMethod != null">#{payMethod},</if>
+            <if test="payStatus != null">#{payStatus},</if>
+            <if test="amount != null">#{amount},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="username != null">#{username},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="address != null">#{address},</if>
+            <if test="consignee != null">#{consignee},</if>
+            <if test="cancelReason != null">#{cancelReason},</if>
+            <if test="rejectionReason != null">#{rejectionReason},</if>
+            <if test="cancelTime != null">#{cancelTime},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="modifyBy != null">#{modifyBy},</if>
+            <if test="modifyTime != null">#{modifyTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateSysGoodsOrder" parameterType="com.ruoyi.system.entity.SysGoodsOrder">
+        update sys_goods_order
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="number != null">number = #{number},</if>
+            <if test="logisticsNo != null">logistics_no = #{logisticsNo},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="goodsId != null">goods_id = #{goodsId},</if>
+            <if test="goodsSpecificationsId != null">goods_specifications_id = #{goodsSpecificationsId},</if>
+            <if test="buyQuantity != null">buy_quantity = #{buyQuantity},</if>
+            <if test="orderTime != null">order_time = #{orderTime},</if>
+            <if test="checkoutTime != null">checkout_time = #{checkoutTime},</if>
+            <if test="payMethod != null">pay_method = #{payMethod},</if>
+            <if test="payStatus != null">pay_status = #{payStatus},</if>
+            <if test="amount != null">amount = #{amount},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="username != null">username = #{username},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="address != null">address = #{address},</if>
+            <if test="consignee != null">consignee = #{consignee},</if>
+            <if test="cancelReason != null">cancel_reason = #{cancelReason},</if>
+            <if test="rejectionReason != null">rejection_reason = #{rejectionReason},</if>
+            <if test="cancelTime != null">cancel_time = #{cancelTime},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="modifyBy != null">modify_by = #{modifyBy},</if>
+            <if test="modifyTime != null">modify_time = #{modifyTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysGoodsOrderById" parameterType="String">
+        delete
+        from sys_goods_order
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteSysGoodsOrderByIds" parameterType="String">
+        delete from sys_goods_order where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

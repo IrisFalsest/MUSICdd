@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "white-heads": "/components/whiteHeads/whiteHeads",
+    "bing-lyric": "/components/bing-lyric/bing-lyric"
+  }
+}

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysGoodsMapper">
+
+    <!-- 开启二级缓存 -->
+<!--    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ruoyi.system.entity.SysGoods">
+        <id column="id" property="id" />
+        <result column="goods_type_id" property="goodsTypeId" />
+        <result column="goods_name" property="goodsName" />
+        <result column="goods_image_url" property="goodsImageUrl" />
+        <result column="goods_chart" property="goodsChart" />
+        <result column="goods_info" property="goodsInfo" />
+        <result column="goods_detail" property="goodsDetail" />
+        <result column="goods_original_price" property="goodsOriginalPrice" />
+        <result column="goods_current_price" property="goodsCurrentPrice" />
+        <result column="goods_heat" property="goodsHeat" />
+        <result column="is_score_buy" property="isScoreBuy" />
+        <result column="score_sum" property="scoreSum" />
+        <result column="is_gift_score" property="isGiftScore" />
+        <result column="gift_score" property="giftScore" />
+        <result column="create_by" property="createBy" />
+        <result column="create_time" property="createTime" />
+        <result column="modify_by" property="modifyBy" />
+        <result column="modify_time" property="modifyTime" />
+        <result column="status" property="status" />
+        <result column="review_status" property="reviewStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, goods_type_id, goods_name, goods_image_url, goods_chart, goods_info, goods_detail, goods_original_price, goods_current_price, goods_heat, is_score_buy, score_sum, is_gift_score, gift_score, create_by, create_time, modify_by, modify_time, status, review_status
+    </sql>
+
+    <resultMap type="com.ruoyi.system.entity.SysGoods" id="SysGoodsResult">
+        <result property="id"    column="id"    />
+        <result property="goodsTypeId"    column="goods_type_id"    />
+        <result property="goodsName"    column="goods_name"    />
+        <result property="goodsImageUrl"    column="goods_image_url"    />
+        <result property="goodsChart"    column="goods_chart"    />
+        <result property="goodsInfo"    column="goods_info"    />
+        <result property="goodsDetail"    column="goods_detail"    />
+        <result property="goodsOriginalPrice"    column="goods_original_price"    />
+        <result property="goodsCurrentPrice"    column="goods_current_price"    />
+        <result property="goodsHeat"    column="goods_heat"    />
+        <result property="isScoreBuy"    column="is_score_buy"    />
+        <result property="scoreSum"    column="score_sum"    />
+        <result property="isGiftScore"    column="is_gift_score"    />
+        <result property="giftScore"    column="gift_score"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="modifyBy"    column="modify_by"    />
+        <result property="modifyTime"    column="modify_time"    />
+        <result property="status"    column="status"    />
+        <result property="reviewStatus"    column="review_status"    />
+    </resultMap>
+
+    <sql id="selectSysGoodsVo">
+        select id, goods_type_id, goods_name, goods_image_url, goods_chart, goods_info, goods_detail, goods_original_price, goods_current_price, goods_heat, is_score_buy, is_gift_score, score_sum, gift_score, create_by, create_time, modify_by, modify_time, status, review_status from sys_goods
+    </sql>
+
+    <select id="selectSysGoodsList" parameterType="com.ruoyi.system.entity.SysGoods" resultMap="SysGoodsResult">
+        <include refid="selectSysGoodsVo"/>
+        <where>
+            <if test="goodsTypeId != null "> and goods_type_id = #{goodsTypeId}</if>
+            <if test="goodsName != null  and goodsName != ''"> and goods_name like concat('%', #{goodsName}, '%')</if>
+            <if test="goodsImageUrl != null  and goodsImageUrl != ''"> and goods_image_url = #{goodsImageUrl}</if>
+            <if test="goodsChart != null  and goodsChart != ''"> and goods_chart = #{goodsChart}</if>
+            <if test="goodsInfo != null  and goodsInfo != ''"> and goods_info = #{goodsInfo}</if>
+            <if test="goodsDetail != null  and goodsDetail != ''"> and goods_detail = #{goodsDetail}</if>
+            <if test="goodsOriginalPrice != null "> and goods_original_price = #{goodsOriginalPrice}</if>
+            <if test="goodsCurrentPrice != null "> and goods_current_price = #{goodsCurrentPrice}</if>
+            <if test="goodsHeat != null "> and goods_heat = #{goodsHeat}</if>
+            <if test="isScoreBuy != null "> and is_score_buy = #{isScoreBuy}</if>
+            <if test="scoreSum != null "> and score_sum = #{scoreSum}</if>
+            <if test="isGiftScore != null "> and is_gift_score = #{isGiftScore}</if>
+            <if test="giftScore != null "> and gift_score = #{giftScore}</if>
+            <if test="createBy != null  and createBy != ''"> and create_by = #{createBy}</if>
+            <if test="createTime != null ">and create_time = #{createTime}</if>
+            <if test="modifyBy != null  and modifyBy != ''"> and modify_by = #{modifyBy}</if>
+            <if test="modifyTime != null "> and modify_time = #{modifyTime}</if>
+            <if test="status != null "> and status = #{status}</if>
+            <if test="reviewStatus != null "> and review_status = #{reviewStatus}</if>
+        </where>
+    </select>
+
+    <select id="selectSysGoodsById" parameterType="Long" resultMap="SysGoodsResult">
+        <include refid="selectSysGoodsVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertSysGoods" parameterType="com.ruoyi.system.entity.SysGoods" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_goods
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="goodsTypeId != null">goods_type_id,</if>
+            <if test="goodsName != null">goods_name,</if>
+            <if test="goodsImageUrl != null">goods_image_url,</if>
+            <if test="goodsChart != null">goods_chart,</if>
+            <if test="goodsInfo != null">goods_info,</if>
+            <if test="goodsDetail != null">goods_detail,</if>
+            <if test="goodsOriginalPrice != null">goods_original_price,</if>
+            <if test="goodsCurrentPrice != null">goods_current_price,</if>
+            <if test="goodsHeat != null">goods_heat,</if>
+            <if test="isScoreBuy != null">is_score_buy,</if>
+            <if test="scoreSum != null">score_sum,</if>
+            <if test="isGiftScore != null">is_gift_score,</if>
+            <if test="giftScore != null">gift_score,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="modifyBy != null">modify_by,</if>
+            <if test="modifyTime != null">modify_time,</if>
+            <if test="status != null">status,</if>
+            <if test="reviewStatus != null">review_status,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="goodsTypeId != null">#{goodsTypeId},</if>
+            <if test="goodsName != null">#{goodsName},</if>
+            <if test="goodsImageUrl != null">#{goodsImageUrl},</if>
+            <if test="goodsChart != null">#{goodsChart},</if>
+            <if test="goodsInfo != null">#{goodsInfo},</if>
+            <if test="goodsDetail != null">#{goodsDetail},</if>
+            <if test="goodsOriginalPrice != null">#{goodsOriginalPrice},</if>
+            <if test="goodsCurrentPrice != null">#{goodsCurrentPrice},</if>
+            <if test="goodsHeat != null">#{goodsHeat},</if>
+            <if test="isScoreBuy != null">#{isScoreBuy},</if>
+            <if test="scoreSum != null">#{scoreSum},</if>
+            <if test="isGiftScore != null">#{isGiftScore},</if>
+            <if test="giftScore != null">#{giftScore},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="modifyBy != null">#{modifyBy},</if>
+            <if test="modifyTime != null">#{modifyTime},</if>
+            <if test="status != null">#{status},</if>
+            <if test="reviewStatus != null">#{reviewStatus},</if>
+        </trim>
+    </insert>
+
+    <update id="updateSysGoods" parameterType="com.ruoyi.system.entity.SysGoods">
+        update sys_goods
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="goodsTypeId != null">goods_type_id = #{goodsTypeId},</if>
+            <if test="goodsName != null">goods_name = #{goodsName},</if>
+            <if test="goodsImageUrl != null">goods_image_url = #{goodsImageUrl},</if>
+            <if test="goodsChart != null">goods_chart = #{goodsChart},</if>
+            <if test="goodsInfo != null">goods_info = #{goodsInfo},</if>
+            <if test="goodsDetail != null">goods_detail = #{goodsDetail},</if>
+            <if test="goodsOriginalPrice != null">goods_original_price = #{goodsOriginalPrice},</if>
+            <if test="goodsCurrentPrice != null">goods_current_price = #{goodsCurrentPrice},</if>
+            <if test="goodsHeat != null">goods_heat = #{goodsHeat},</if>
+            <if test="isScoreBuy != null">is_score_buy = #{isScoreBuy},</if>
+            <if test="scoreSum != null">score_sum = #{scoreSum},</if>
+            <if test="isGiftScore != null">is_gift_score = #{isGiftScore},</if>
+            <if test="giftScore != null">gift_score = #{giftScore},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="modifyBy != null">modify_by = #{modifyBy},</if>
+            <if test="modifyTime != null">modify_time = #{modifyTime},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="reviewStatus != null">review_status = #{reviewStatus},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysGoodsById" parameterType="Long">
+        delete from sys_goods where id = #{id}
+    </delete>
+
+    <delete id="deleteSysGoodsByIds" parameterType="String">
+        delete from sys_goods where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

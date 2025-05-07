@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.data-v-665e8a74 .u-tabbar__content .u-tabbar__content__circle .u-icon__img {
+  width: 82rpx !important;
+  height: 82rpx !important;
+}
+.data-v-665e8a74 .u-tabbar__content .u-icon__img {
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.data-v-665e8a74 .u-tabbar__content__circle__border {
+  top: 0 !important;
+}
+.data-v-665e8a74 .u-tabbar__content__circle__button {
+  top: 4px !important;
+}
+.upload.data-v-665e8a74 {
+  margin: 20%;
+}
+.upload .desc.data-v-665e8a74 {
+  text-align: center;
+  color: #999;
+}
+.upload image.data-v-665e8a74 {
+  width: 100%;
+}
+.center_poter.data-v-665e8a74 {
+  position: relative;
+  z-index: 999;
+}
+.center_poter .close_btn.data-v-665e8a74 {
+  width: 40rpx;
+  height: 40rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 5rpx;
+  right: 5rpx;
+  z-index: 500;
+  padding: 5rpx;
+  border-radius: 6rpx;
+  z-index: 999;
+  text-align: center;
+}
+.btns.data-v-665e8a74 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.btn.data-v-665e8a74 {
+  font-size: 26rpx;
+  width: 300rpx;
+  height: 80rpx;
+  background-color: red;
+  border-radius: 50rpx;
+  color: white;
+  line-height: 80rpx;
+  text-align: center;
+  font-weight: bold;
+}
+

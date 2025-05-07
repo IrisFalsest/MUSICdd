@@ -1,0 +1,233 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.data-v-2e5b8a46 .u-tabbar__content .u-tabbar__content__circle .u-icon__img {
+  width: 82rpx !important;
+  height: 82rpx !important;
+}
+.data-v-2e5b8a46 .u-tabbar__content .u-icon__img {
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.data-v-2e5b8a46 .u-tabbar__content__circle__border {
+  top: 0 !important;
+}
+.data-v-2e5b8a46 .u-tabbar__content__circle__button {
+  top: 4px !important;
+}
+.content.data-v-2e5b8a46 {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: url("https://image-file2024.oss-cn-beijing.aliyuncs.com/geWoLiMusicMall/backgroundImage/image5.jpg");
+  background-size: 100% 100%;
+}
+.content .title.data-v-2e5b8a46 {
+  line-height: 70rpx;
+  font-size: 36rpx;
+  margin-left: 36rpx;
+  position: relative;
+}
+.content .userName.data-v-2e5b8a46 {
+  margin-top: 105rpx;
+  text-indent: 64rpx;
+  font-size: 40rpx;
+  color: #231815;
+  font-weight: 800;
+}
+.content .userNum.data-v-2e5b8a46 {
+  margin-top: 30rpx;
+  text-indent: 64rpx;
+  font-size: 24rpx;
+  color: #231815;
+  font-weight: 500;
+}
+.content .userNum text.data-v-2e5b8a46 {
+  font-size: 40rpx;
+  margin: 0 5rpx;
+}
+.content .icon.data-v-2e5b8a46 {
+  width: 378rpx;
+  height: 322rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 50rpx;
+}
+.content .sings.data-v-2e5b8a46 {
+  margin-top: 32rpx;
+  border-radius: 20rpx;
+  border: 4rpx solid #FFFFFF;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.67) 0%, rgba(255, 255, 255, 0.56) 100%);
+  box-shadow: 0 0 20rpx #fff;
+}
+.content .sings .none.data-v-2e5b8a46 {
+  text-align: center;
+}
+.content .sings .none image.data-v-2e5b8a46 {
+  width: 326rpx;
+  height: 326rpx;
+  margin-top: 32rpx;
+}
+.content .sings .none .txt.data-v-2e5b8a46 {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #191919;
+  margin-top: 16rpx;
+}
+.content .sings .haveSing.data-v-2e5b8a46 {
+  text-align: center;
+}
+.content .sings .haveSing .btn.data-v-2e5b8a46 {
+  margin-bottom: 20rpx;
+}
+.content .sings .haveSing .singList.data-v-2e5b8a46 {
+  text-align: left;
+  width: 686rpx;
+  margin: 0 auto 0;
+  overflow: auto;
+}
+.content .sings .haveSing .singList .slView.data-v-2e5b8a46 {
+  margin-bottom: 10rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  box-shadow: 0rpx 0rpx 62rpx 0rpx rgba(255, 239, 223, 0.5);
+}
+.content .sings .haveSing .singList .slView .slvTop.data-v-2e5b8a46 {
+  display: flex;
+  align-items: center;
+  padding-top: 22rpx;
+  padding-bottom: 22rpx;
+  border-bottom: 2rpx solid #ECECEC;
+}
+.content .sings .haveSing .singList .slView .slvTop .slvCover.data-v-2e5b8a46 {
+  width: 156rpx;
+  height: 156rpx;
+  border-radius: 78rpx;
+  overflow: hidden;
+  position: relative;
+  margin-left: 32rpx;
+}
+.content .sings .haveSing .singList .slView .slvTop .slvCover .slvcImg.data-v-2e5b8a46 {
+  width: 156rpx;
+  height: 156rpx;
+}
+.content .sings .haveSing .singList .slView .slvTop .slvCover .slvcPlay.data-v-2e5b8a46 {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.content .sings .haveSing .singList .slView .slvTop .slvMain.data-v-2e5b8a46 {
+  width: 320rpx;
+  height: 156rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20rpx;
+  flex-direction: column;
+}
+.content .sings .haveSing .singList .slView .slvTop .slvMain .slvmTit.data-v-2e5b8a46 {
+  font-size: 24rpx;
+  font-weight: 800;
+}
+.content .sings .haveSing .singList .slView .slvTop .slvMain .slvmTxt.data-v-2e5b8a46 {
+  color: #000000;
+  font-size: 20rpx;
+}
+.content .sings .haveSing .singList .slView .slvTop .slvMain .slvmTxt1 .price.data-v-2e5b8a46 {
+  font-size: 28rpx;
+  color: #FB3758;
+  font-weight: 800;
+}
+.content .sings .haveSing .singList .slView .slvTop .slvMain .slvmTxt1 .orPrice.data-v-2e5b8a46 {
+  text-decoration: line-through;
+  font-size: 20rpx;
+  color: rgba(153, 153, 153, 0.6);
+  margin-left: 10rpx;
+}
+.content .sings .haveSing .singList .slView .slvTop .slvBtn.data-v-2e5b8a46 {
+  white-space: nowrap;
+  margin-left: auto;
+  padding: 0 10rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  color: #fff;
+  font-size: 28rpx;
+  margin-right: 32rpx;
+}
+.content .sings .haveSing .singList .slView .slvTop .status1.data-v-2e5b8a46 {
+  background: #FFA14A;
+}
+.content .sings .haveSing .singList .slView .slvTop .status2.data-v-2e5b8a46 {
+  background: #18b566;
+}
+.content .sings .haveSing .singList .slView .slvTop .status3.data-v-2e5b8a46 {
+  background: #dd6161;
+}
+.content .sings .btn.data-v-2e5b8a46 {
+  display: inline-block;
+  margin: 32rpx auto 0;
+  border-radius: 48rpx;
+  padding: 20rpx 76rpx;
+  color: #FFFFFF;
+  font-size: 40rpx;
+  font-weight: 800;
+  border: 4rpx solid #FFA14A;
+  background: linear-gradient(92deg, #FFD0A4 0%, #FAB06C 33%, #FAB06C 73%, #FFC996 100%);
+}
+.content .jian.data-v-2e5b8a46 {
+  padding-bottom: 42rpx;
+  border-radius: 20rpx;
+  box-shadow: inset 0 0 20rpx #EDC8A5;
+}
+.content .bot.data-v-2e5b8a46 {
+  margin-top: -20rpx;
+  position: fixed;
+  width: 100vw;
+  height: 684rpx;
+  background: #FFFFFF;
+  border-radius: 20rpx 20rpx 0 0;
+  text-align: center;
+}
+.content .bot .bTit.data-v-2e5b8a46 {
+  font-size: 24rpx;
+  font-weight: 500;
+  margin-top: 32rpx;
+}
+.content .bot .bBtn.data-v-2e5b8a46 {
+  display: inline-block;
+  margin: 38rpx auto 32rpx;
+  border-radius: 58rpx;
+  padding: 20rpx 76rpx;
+  border: 4rpx solid #FEB26C;
+}
+.content .bot .bBtn text.data-v-2e5b8a46 {
+  background: linear-gradient(43.53121deg, #FFD3AA 0%, rgba(216, 113, 73, 0.5) 100%);
+  font-size: 40rpx;
+  font-weight: 800;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.content .bot .bUl.data-v-2e5b8a46 {
+  display: flex;
+}
+.content .bot .bUl .buLi.data-v-2e5b8a46 {
+  margin: auto;
+}
+.content .bot .bUl .buLi image.data-v-2e5b8a46 {
+  width: 100rpx;
+  height: 100rpx;
+}
+.content .bot .bUl .buLi .bulTxt.data-v-2e5b8a46 {
+  font-size: 24rpx;
+  font-weight: 500;
+}
+

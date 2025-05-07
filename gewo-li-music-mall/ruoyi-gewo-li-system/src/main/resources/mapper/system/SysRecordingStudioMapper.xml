@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysRecordingStudioMapper">
+    <resultMap type="com.ruoyi.system.entity.SysRecordingStudio" id="SysRecordingStudioResult">
+        <result property="id"    column="id"    />
+        <result property="studioName"    column="studio_name"    />
+        <result property="studioLabel"    column="studio_label"    />
+        <result property="originalPrice"    column="original_price"    />
+        <result property="currentPrice"    column="current_price"    />
+        <result property="studioArea"    column="studio_area"    />
+        <result property="facing"    column="facing"    />
+        <result property="studioHeat"    column="studio_heat"    />
+        <result property="studioAddress"    column="studio_address"    />
+        <result property="coverPhotoUrl"    column="cover_photo_url"    />
+        <result property="carouselChart"    column="carousel_chart"    />
+        <result property="detailImages"    column="detail_images"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="modifyBy"    column="modify_by"    />
+        <result property="modifyTime"    column="modify_time"    />
+        <result property="isCustomization"    column="is_customization"    />
+        <result property="status"    column="status"    />
+        <result property="longitude"    column="longitude"    />
+        <result property="latitude"    column="latitude"    />
+    </resultMap>
+
+    <sql id="selectSysRecordingStudioVo">
+        select id, studio_name, studio_label, original_price, current_price, studio_area, facing, studio_heat, studio_address, cover_photo_url, carousel_chart, detail_images, create_by, create_time, modify_by, modify_time, is_customization, status,longitude,latitude from sys_recording_studio
+    </sql>
+
+    <select id="selectSysRecordingStudioList" parameterType="com.ruoyi.system.entity.SysRecordingStudio" resultMap="SysRecordingStudioResult">
+        <include refid="selectSysRecordingStudioVo"/>
+        <where>
+            <if test="studioName != null  and studioName != ''"> and studio_name like concat('%', #{studioName}, '%')</if>
+            <if test="studioLabel != null  and studioLabel != ''"> and studio_label = #{studioLabel}</if>
+            <if test="originalPrice != null "> and original_price = #{originalPrice}</if>
+            <if test="currentPrice != null "> and current_price = #{currentPrice}</if>
+            <if test="studioArea != null "> and studio_area = #{studioArea}</if>
+            <if test="facing != null  and facing != ''"> and facing = #{facing}</if>
+            <if test="studioHeat != null "> and studio_heat = #{studioHeat}</if>
+            <if test="studioAddress != null  and studioAddress != ''"> and studio_address = #{studioAddress}</if>
+            <if test="coverPhotoUrl != null  and coverPhotoUrl != ''"> and cover_photo_url = #{coverPhotoUrl}</if>
+            <if test="carouselChart != null  and carouselChart != ''"> and carousel_chart = #{carouselChart}</if>
+            <if test="detailImages != null  and detailImages != ''"> and detail_images = #{detailImages}</if>
+            <if test="modifyBy != null  and modifyBy != ''"> and modify_by = #{modifyBy}</if>
+            <if test="modifyTime != null "> and modify_time = #{modifyTime}</if>
+            <if test="isCustomization != null "> and is_customization = #{isCustomization}</if>
+            <if test="status != null "> and status = #{status}</if>
+            <if test="longitude != null "> and status = #{longitude}</if>
+            <if test="latitude != null "> and status = #{latitude}</if>
+        </where>
+    </select>
+
+    <select id="selectSysRecordingStudioById" parameterType="Long" resultMap="SysRecordingStudioResult">
+        <include refid="selectSysRecordingStudioVo"/>
+        where id = #{id}
+    </select>
+
+    <select id="findStudioView" resultType="com.ruoyi.system.entity.SysRecordingStudio">
+        SELECT
+            s.*,
+            CASE WHEN c.studio_id IS NOT NULL THEN 1 ELSE 0 END AS is_collect
+        FROM
+            sys_recording_studio s
+                LEFT JOIN
+            sys_user_studio_collection c
+            ON s.id = c.studio_id
+                AND c.user_id = #{userId}
+        <if test="studioId != null">
+        WHERE s.id = #{studioId}
+        </if>
+    </select>
+
+    <insert id="insertSysRecordingStudio" parameterType="com.ruoyi.system.entity.SysRecordingStudio" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_recording_studio
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="studioName != null">studio_name,</if>
+            <if test="studioLabel != null">studio_label,</if>
+            <if test="originalPrice != null">original_price,</if>
+            <if test="currentPrice != null">current_price,</if>
+            <if test="studioArea != null">studio_area,</if>
+            <if test="facing != null">facing,</if>
+            <if test="studioHeat != null">studio_heat,</if>
+            <if test="studioAddress != null">studio_address,</if>
+            <if test="coverPhotoUrl != null">cover_photo_url,</if>
+            <if test="carouselChart != null">carousel_chart,</if>
+            <if test="detailImages != null">detail_images,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="modifyBy != null">modify_by,</if>
+            <if test="modifyTime != null">modify_time,</if>
+            <if test="isCustomization != null">is_customization,</if>
+            <if test="status != null">status,</if>
+            <if test="longitude != null">longitude,</if>
+            <if test="latitude != null">latitude,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="studioName != null">#{studioName},</if>
+            <if test="studioLabel != null">#{studioLabel},</if>
+            <if test="originalPrice != null">#{originalPrice},</if>
+            <if test="currentPrice != null">#{currentPrice},</if>
+            <if test="studioArea != null">#{studioArea},</if>
+            <if test="facing != null">#{facing},</if>
+            <if test="studioHeat != null">#{studioHeat},</if>
+            <if test="studioAddress != null">#{studioAddress},</if>
+            <if test="coverPhotoUrl != null">#{coverPhotoUrl},</if>
+            <if test="carouselChart != null">#{carouselChart},</if>
+            <if test="detailImages != null">#{detailImages},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="modifyBy != null">#{modifyBy},</if>
+            <if test="modifyTime != null">#{modifyTime},</if>
+            <if test="isCustomization != null">#{isCustomization},</if>
+            <if test="status != null">#{status},</if>
+            <if test="longitude != null">#{longitude},</if>
+            <if test="latitude != null">#{latitude},</if>
+        </trim>
+    </insert>
+
+    <update id="updateSysRecordingStudio" parameterType="com.ruoyi.system.entity.SysRecordingStudio">
+        update sys_recording_studio
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="studioName != null">studio_name = #{studioName},</if>
+            <if test="studioLabel != null">studio_label = #{studioLabel},</if>
+            <if test="originalPrice != null">original_price = #{originalPrice},</if>
+            <if test="currentPrice != null">current_price = #{currentPrice},</if>
+            <if test="studioArea != null">studio_area = #{studioArea},</if>
+            <if test="facing != null">facing = #{facing},</if>
+            <if test="studioHeat != null">studio_heat = #{studioHeat},</if>
+            <if test="studioAddress != null">studio_address = #{studioAddress},</if>
+            <if test="coverPhotoUrl != null">cover_photo_url = #{coverPhotoUrl},</if>
+            <if test="carouselChart != null">carousel_chart = #{carouselChart},</if>
+            <if test="detailImages != null">detail_images = #{detailImages},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="modifyBy != null">modify_by = #{modifyBy},</if>
+            <if test="modifyTime != null">modify_time = #{modifyTime},</if>
+            <if test="isCustomization != null">is_customization = #{isCustomization},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="longitude != null">longitude = #{longitude},</if>
+            <if test="latitude != null">latitude = #{latitude},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysRecordingStudioById" parameterType="Long">
+        delete from sys_recording_studio where id = #{id}
+    </delete>
+
+    <delete id="deleteSysRecordingStudioByIds" parameterType="String">
+        delete from sys_recording_studio where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
