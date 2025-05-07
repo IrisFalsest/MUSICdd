@@ -1,3 +1,4 @@
 gewoli_song_uniapp/* filter=lfs diff=lfs merge=lfs -text
 gewo-li-music-mall/* filter=lfs diff=lfs merge=lfs -text
 redis/* filter=lfs diff=lfs merge=lfs -text
+gewo[[:space:]]-[[:space:]]li[[:space:]]-[[:space:]]music[[:space:]]-[[:space:]]mall/* filter=lfs diff=lfs merge=lfs -text

@@ -36,7 +36,7 @@ public class WXPayUtil {
         StringBuilder sb = new StringBuilder();
         Set<Map.Entry<String, String>> es =  params.entrySet();
         Iterator<Map.Entry<String, String>> it =  es.iterator();
-        //生成 stringA="appid=wxd930ea5d5a258f4f&body=test&device_info=1000&mch_id=10000100&nonce_str=ibuaiVcKdpRxkhJA";
+        //生成 stringA="appid=&body=test&device_info=1000&mch_id=10000100&nonce_str=ibuaiVcKdpRxkhJA";
         while (it.hasNext()){
             Map.Entry<String, String> entry = (Map.Entry<String, String>)it.next();
             String k = (String)entry.getKey();
