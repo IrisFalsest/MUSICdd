@@ -282,6 +282,11 @@
 
 		<play-bottom ref="playBottomRef" :playobj="playObj"></play-bottom>
 
+		<!-- AI对话入口 -->
+		<view class="ai-chat-entry" @click="openAiChat">
+			<image src="/static/logo.png"></image>
+		</view>
+
 		<!-- tabbar -->
 		<u-tabbar :list="tabbar" :mid-button="true" height="58px" active-color="#FFD3AA"></u-tabbar>
 	</scroll-view>
@@ -355,7 +360,8 @@ export default {
 			userId: '',
 			curItem: {},
 			mvTypeList: [],
-			play: false
+			play: false,
+			deepseekKey: 'sk-bfc6a723707042cdb998debd707c0697'
 		};
 	},
 	components: {
@@ -723,6 +729,12 @@ export default {
 					}
 				});
 			}, 25000);
+		},
+		// AI对话功能
+		openAiChat() {
+			uni.navigateTo({
+				url: '/pages/ai-chat/ai-chat'
+			});
 		}
 	}
 };
@@ -1148,6 +1160,27 @@ export default {
 			height: 70rpx;
 			margin-bottom: 10%;
 		}
+	}
+}
+
+/* AI对话入口样式 */
+.ai-chat-entry {
+	position: fixed;
+	right: 30rpx;
+	bottom: 150rpx;
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	background: linear-gradient(143deg, #e9c19c 0%, #ffd3aa 100%);
+	box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+	
+	image {
+		width: 60rpx;
+		height: 60rpx;
 	}
 }
 </style>
